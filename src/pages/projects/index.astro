@@ -1,0 +1,82 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'Aviation Revenue Hours Forecasting',
+    description:
+      'Production time-series forecasting model for revenue flight hours at a fractional private aviation operator. Addressed a $49M empty-leg cost exposure and identified a $5M–$10M savings opportunity through better capacity planning.',
+    tags: ['Python', 'Snowflake', 'Prophet', 'ARIMA', 'LSTM', 'QuickSight'],
+    metrics: ['6% MAPE weekly', '2% MAPE monthly', '40% ↓ error vs baseline'],
+    href: '/projects/forecasting',
+    status: 'production' as const,
+    external: false,
+  },
+  {
+    title: 'Public Aviation Demand Forecasting Demo',
+    description:
+      'Open-source demonstration of aviation demand forecasting on publicly available data. Applies similar time-series techniques (Prophet, ARIMA, seasonal decomposition) without proprietary data. GitHub link coming soon.',
+    tags: ['Python', 'Prophet', 'Pandas', 'Plotly', 'Jupyter'],
+    metrics: [],
+    href: 'https://github.com/dingjamma',
+    status: 'wip' as const,
+    external: true,
+  },
+  {
+    title: 'Portfolio Website',
+    description:
+      'This site — built with Astro 5, Tailwind CSS v4, shadcn/ui, and TypeScript. Fully responsive, dark-mode aware, and deployed on Vercel. Source code available on GitHub.',
+    tags: ['Astro', 'TypeScript', 'Tailwind CSS v4', 'shadcn/ui'],
+    metrics: [],
+    href: 'https://github.com/dingjamma',
+    status: 'demo' as const,
+    external: true,
+  },
+];
+---
+
+<Layout
+  title="Projects – Jiajian Ding"
+  description="Data science and analytics projects by Jiajian Ding, including a production aviation forecasting system with 6% MAPE."
+>
+
+  <div class="section container-lg">
+
+    <!-- Header -->
+    <div class="mb-14 max-w-2xl">
+      <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Work</p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-4">
+        Projects
+      </h1>
+      <p class="text-muted-foreground text-lg leading-relaxed">
+        A selection of production systems and open-source projects focused on
+        applied machine learning and data analytics.
+      </p>
+    </div>
+
+    <!-- Project grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      {projects.map(project => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 rounded-xl border border-dashed border-border bg-card/50 p-8 text-center">
+      <p class="text-muted-foreground mb-4">
+        More projects in progress. Want to collaborate?
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        Get in Touch
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</Layout>

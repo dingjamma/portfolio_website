@@ -1,0 +1,205 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+const skills = [
+  // Languages & Querying
+  { name: 'Python',           category: 'Core' },
+  { name: 'SQL',              category: 'Core' },
+  { name: 'TypeScript',       category: 'Core' },
+
+  // Data & ML
+  { name: 'Time-Series Forecasting', category: 'ML/Analytics' },
+  { name: 'PyTorch',          category: 'ML/Analytics' },
+  { name: 'Prophet / ARIMA',  category: 'ML/Analytics' },
+  { name: 'LSTM / Transformers', category: 'ML/Analytics' },
+  { name: 'EDA & Feature Engineering', category: 'ML/Analytics' },
+  { name: 'scikit-learn',     category: 'ML/Analytics' },
+
+  // Data Infra
+  { name: 'Snowflake',        category: 'Data Infra' },
+  { name: 'Amazon QuickSight',category: 'Data Infra' },
+  { name: 'MLOps Basics',     category: 'Data Infra' },
+
+  // Web / Viz
+  { name: 'Astro',            category: 'Web' },
+  { name: 'Tailwind CSS',     category: 'Web' },
+  { name: 'React',            category: 'Web' },
+
+  // Soft / Process
+  { name: 'Business Stakeholder Comms', category: 'Process' },
+  { name: 'Agile / Scrum',    category: 'Process' },
+  { name: 'Git & GitHub',     category: 'Process' },
+];
+
+const categoryColors: Record<string, string> = {
+  'Core':         'bg-indigo-100 text-indigo-700 border-indigo-200 dark:bg-indigo-900/40 dark:text-indigo-300 dark:border-indigo-800',
+  'ML/Analytics': 'bg-violet-100 text-violet-700 border-violet-200 dark:bg-violet-900/40 dark:text-violet-300 dark:border-violet-800',
+  'Data Infra':   'bg-sky-100   text-sky-700   border-sky-200   dark:bg-sky-900/40   dark:text-sky-300   dark:border-sky-800',
+  'Web':          'bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-900/40 dark:text-emerald-300 dark:border-emerald-800',
+  'Process':      'bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-900/40 dark:text-amber-300 dark:border-amber-800',
+};
+
+const experience = [
+  {
+    title:    'Associate Data Analyst',
+    company:  'AirSprint Private Aviation',
+    period:   'May 2025 – Present',
+    location: 'Calgary, AB',
+    bullets: [
+      'Designed and shipped a production time-series forecasting model (Prophet + ARIMA ensemble, LSTM experiments) for revenue flight-hour planning.',
+      'Achieved 6% weekly MAPE and 2% monthly MAPE in production; 40% error reduction vs. backtest baseline.',
+      'Addressed $49M empty-leg cost exposure, identifying $5M–$10M savings opportunity for the operations team.',
+      'Built Snowflake data pipelines and Amazon QuickSight dashboards consumed by executive stakeholders.',
+      'Resolved UTC timestamp ingestion bugs and developed volatility-aware smoothing strategies for noisy ops data.',
+    ],
+  },
+  {
+    title:    'Data Analyst Intern',
+    company:  'AirSprint Private Aviation',
+    period:   '2024',
+    location: 'Calgary, AB',
+    bullets: [
+      'Supported EDA and baseline modelling for flight-hour demand, laying the groundwork for the production forecaster.',
+      'Authored SQL queries in Snowflake for ad-hoc reporting and KPI tracking.',
+      'Collaborated with operations and finance teams to translate business questions into analytical deliverables.',
+    ],
+  },
+];
+---
+
+<Layout
+  title="About – Jiajian Ding"
+  description="Learn about Jiajian Ding's background: MSc Data Science, University of Calgary, aviation analytics, and data science skills."
+>
+
+  <div class="section container-lg">
+
+    <!-- Page header -->
+    <div class="mb-16 max-w-2xl">
+      <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-3">About</p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-6">
+        Jiajian Ding
+      </h1>
+
+      <!-- Professional summary -->
+      <div class="prose prose-slate dark:prose-invert max-w-none space-y-4 text-muted-foreground leading-relaxed">
+        <p>
+          I'm a data scientist specialising in time-series forecasting and operational analytics,
+          currently working as an Associate Data Analyst at <strong class="text-foreground">AirSprint Private Aviation</strong>
+          in Calgary, Alberta.
+        </p>
+        <p>
+          My graduate research at the <strong class="text-foreground">University of Calgary</strong> (MSc Data Science)
+          focused on applied machine learning for real-world sequential data — work that translated
+          directly into the production forecasting system I built and maintain at AirSprint.
+          That system forecasts revenue flight hours with 6% weekly MAPE, contributing to more
+          efficient fleet positioning and a tangible reduction in costly empty-leg flights.
+        </p>
+        <p>
+          I'm fascinated by the full analytical lifecycle: from raw, messy operational data
+          (UTC timestamp chaos included) through exploratory analysis, model development,
+          production deployment, and stakeholder storytelling. I believe the best models
+          are only as valuable as the decisions they enable.
+        </p>
+        <p>
+          Outside of work I enjoy exploring new datasets, tinkering with web tech (Astro, Tailwind),
+          and following developments in transformer-based time-series architectures.
+          I'm always open to conversations about data science, aviation, or interesting
+          analytical problems.
+        </p>
+      </div>
+    </div>
+
+    <!-- Two-column layout: Education + Skills | Experience -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+
+      <!-- Left column: Education + Skills -->
+      <div class="lg:col-span-1 space-y-12">
+
+        <!-- Education -->
+        <section>
+          <h2 class="text-sm font-semibold text-primary uppercase tracking-widest mb-6">Education</h2>
+
+          <div class="rounded-xl border border-border bg-card p-6">
+            <div class="flex items-start gap-4">
+              <div class="shrink-0 h-10 w-10 rounded-md bg-primary/10 flex items-center justify-center">
+                <svg class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                  <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold text-foreground">MSc Data Science</p>
+                <p class="text-sm text-primary mt-0.5">University of Calgary</p>
+                <p class="text-xs text-muted-foreground mt-1">Calgary, AB, Canada</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section>
+          <h2 class="text-sm font-semibold text-primary uppercase tracking-widest mb-6">Skills</h2>
+          <div class="flex flex-wrap gap-2">
+            {skills.map(({ name, category }) => (
+              <span class={`inline-flex items-center rounded-md border px-2.5 py-1 text-xs font-medium ${categoryColors[category]}`}>
+                {name}
+              </span>
+            ))}
+          </div>
+
+          <!-- Legend -->
+          <div class="mt-4 flex flex-wrap gap-3">
+            {Object.entries(categoryColors).map(([cat, cls]) => (
+              <span class={`inline-flex items-center rounded-md border px-2 py-0.5 text-[10px] font-semibold ${cls}`}>
+                {cat}
+              </span>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <!-- Right column: Experience timeline -->
+      <div class="lg:col-span-2">
+        <h2 class="text-sm font-semibold text-primary uppercase tracking-widest mb-6">Experience</h2>
+
+        <div class="relative space-y-8">
+          {/* Timeline line */}
+          <div class="absolute left-5 top-2 bottom-2 w-px bg-border hidden sm:block" aria-hidden="true"></div>
+
+          {experience.map((exp, i) => (
+            <div class="relative sm:pl-14">
+              {/* Timeline dot */}
+              <div class="hidden sm:flex absolute left-0 top-1 h-10 w-10 items-center justify-center rounded-full border-2 border-primary bg-background z-10">
+                <span class="text-xs font-bold text-primary">{experience.length - i}</span>
+              </div>
+
+              <div class="rounded-xl border border-border bg-card p-6 hover:border-primary/40 transition-colors">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-4">
+                  <div>
+                    <h3 class="font-bold text-foreground">{exp.title}</h3>
+                    <p class="text-sm text-primary font-medium">{exp.company}</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-xs font-semibold text-muted-foreground whitespace-nowrap">{exp.period}</p>
+                    <p class="text-xs text-muted-foreground">{exp.location}</p>
+                  </div>
+                </div>
+
+                <ul class="space-y-2">
+                  {exp.bullets.map(bullet => (
+                    <li class="flex items-start gap-2 text-sm text-muted-foreground">
+                      <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60"></span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>

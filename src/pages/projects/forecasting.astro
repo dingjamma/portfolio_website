@@ -1,0 +1,258 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+const metrics = [
+  { value: '6%',  label: 'MAPE (weekly)',    color: 'bg-indigo-100 text-indigo-700 border-indigo-200 dark:bg-indigo-900/40 dark:text-indigo-300 dark:border-indigo-800' },
+  { value: '2%',  label: 'MAPE (monthly)',   color: 'bg-violet-100 text-violet-700 border-violet-200 dark:bg-violet-900/40 dark:text-violet-300 dark:border-violet-800' },
+  { value: '40%', label: 'Error reduction',  color: 'bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-900/40 dark:text-emerald-300 dark:border-emerald-800' },
+  { value: '$49M',label: 'Cost exposure addressed', color: 'bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-900/40 dark:text-amber-300 dark:border-amber-800' },
+];
+
+const techStack = [
+  { name: 'Python',      note: 'Core language for EDA, modelling, pipeline scripting' },
+  { name: 'Snowflake',   note: 'Cloud data warehouse — query layer and feature store' },
+  { name: 'Prophet',     note: 'Primary production forecasting model (ARIMA ensemble)' },
+  { name: 'ARIMA',       note: 'Baseline + ensemble component' },
+  { name: 'LSTM',        note: 'Experimental deep-learning challenger model (PyTorch)' },
+  { name: 'Transformers',note: 'Temporal Fusion Transformer experiments (PyTorch)' },
+  { name: 'Pandas / NumPy', note: 'Data wrangling, feature engineering' },
+  { name: 'QuickSight',  note: 'Executive-facing BI dashboards' },
+  { name: 'Git / GitHub',note: 'Version control, code review' },
+];
+
+const approach = [
+  {
+    step: '01',
+    title: 'Exploratory Data Analysis',
+    body: 'Deep-dive into historical revenue flight-hour records stored in Snowflake. Identified strong weekly and seasonal patterns, holiday effects, and high volatility driven by demand spikes and fleet constraints. Discovered UTC timestamp ingestion errors causing phantom time-shifts in aggregated metrics — fixed at the pipeline level.',
+  },
+  {
+    step: '02',
+    title: 'Baseline Models',
+    body: 'Established ARIMA and Holt-Winters exponential smoothing baselines. Tuned seasonal decomposition (STL) to separate trend, seasonality, and residuals. These baselines set the performance bar and provided interpretable outputs for stakeholder buy-in.',
+  },
+  {
+    step: '03',
+    title: 'Production Model — Prophet Ensemble',
+    body: 'Selected Facebook Prophet as the primary model for its native handling of multiple seasonalities, holiday effects, and changepoints. Blended with ARIMA residuals into a lightweight ensemble. Applied volatility-aware prediction intervals to communicate uncertainty to the operations team.',
+  },
+  {
+    step: '04',
+    title: 'Advanced Experiments',
+    body: 'Implemented LSTM (PyTorch) and Temporal Fusion Transformer (TFT) challenger models to test whether deep learning could squeeze additional accuracy from the noisy ops data. Results showed marginal gains insufficient to justify deployment complexity at current data volume — documented for future revisit.',
+  },
+  {
+    step: '05',
+    title: 'Deployment & Monitoring',
+    body: 'Automated weekly retraining and scoring jobs. Forecast outputs land in Snowflake tables consumed by QuickSight dashboards used by operations and finance leadership. Model performance tracked via rolling MAPE; alerts configured for drift.',
+  },
+];
+
+const lessons = [
+  {
+    title: 'Noise is the hardest problem',
+    body: 'Private aviation demand is inherently noisy. Individual aircraft AOG events, weather cancellations, and VIP-driven demand spikes create discontinuities no model handles gracefully. The biggest accuracy gains came from better data cleaning, not model architecture.',
+  },
+  {
+    title: 'UTC timestamp bugs bite silently',
+    body: 'Ingested timestamps stored in UTC but aggregated as-if local time produced ~hour-level phantom patterns in hourly data. The bug was invisible until granular EDA. Always validate timezone handling end-to-end before modelling.',
+  },
+  {
+    title: 'Stakeholder interpretability beats black-box accuracy',
+    body: 'LSTM gave marginally better point estimates in backtesting, but Prophet's decomposition plots and changepoint visualisations were far more useful for building trust with the ops team. The production model is the one stakeholders understand and act on.',
+  },
+  {
+    title: 'Prediction intervals are non-negotiable for ops planning',
+    body: 'Point forecasts without uncertainty quantification led to over-confident planning. Incorporating calibrated 80/95% prediction intervals changed how the team scheduled maintenance windows and crew positioning.',
+  },
+];
+---
+
+<Layout
+  title="Aviation Revenue Hours Forecasting – Jiajian Ding"
+  description="Production time-series forecasting model for aviation revenue flight hours. 6% weekly MAPE, 2% monthly MAPE, 40% error reduction. Built at AirSprint Private Aviation."
+>
+
+  <article>
+
+    <!-- ── Hero ─────────────────────────────────────────────── -->
+    <div class="relative overflow-hidden border-b border-border bg-gradient-to-b from-primary/5 to-background py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-8">
+          <a href="/" class="hover:text-foreground transition-colors">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/projects" class="hover:text-foreground transition-colors">Projects</a>
+          <span aria-hidden="true">/</span>
+          <span class="text-foreground">Forecasting</span>
+        </nav>
+
+        <span class="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold mb-4 bg-emerald-100 text-emerald-700 border border-emerald-200 dark:bg-emerald-900/40 dark:text-emerald-300 dark:border-emerald-800">
+          Production · AirSprint Private Aviation
+        </span>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground mb-4 text-balance">
+          Aviation Revenue Hours Forecasting
+        </h1>
+
+        <p class="text-lg text-muted-foreground mb-10 max-w-2xl leading-relaxed">
+          A production time-series forecasting system for weekly and monthly revenue
+          flight hours at a North American fractional private jet operator — from
+          messy raw data to executive dashboards.
+        </p>
+
+        <!-- Metrics row -->
+        <div class="flex flex-wrap gap-3">
+          {metrics.map(m => (
+            <div class={`rounded-lg border px-4 py-3 ${m.color}`}>
+              <p class="text-2xl font-extrabold">{m.value}</p>
+              <p class="text-xs font-medium opacity-80 mt-0.5">{m.label}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- GitHub placeholder -->
+        <div class="mt-8">
+          <span
+            class="inline-flex items-center gap-2 text-sm text-muted-foreground border border-dashed border-border rounded-md px-3 py-1.5"
+            title="Proprietary code — public demo repo coming soon"
+          >
+            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+            Code: proprietary — public demo coming soon
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Content ────────────────────────────────────────────── -->
+    <div class="section container-lg">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12">
+
+        <!-- Main content -->
+        <div class="space-y-16">
+
+          <!-- Problem Statement -->
+          <section>
+            <h2 class="text-2xl font-bold text-foreground mb-4">Problem Statement</h2>
+            <div class="text-muted-foreground leading-relaxed space-y-4">
+              <p>
+                Fractional private aviation operates on tight margins where fleet utilisation
+                is the primary profitability lever. <strong class="text-foreground">Empty leg flights</strong> —
+                repositioning flights with no revenue passengers — represent a massive cost driver.
+                AirSprint faced an estimated <strong class="text-foreground">$49M annual empty-leg cost exposure</strong>.
+              </p>
+              <p>
+                The operations team had no reliable forward view of demand beyond 1–2 weeks,
+                making crew scheduling, maintenance windows, and fleet positioning reactive
+                rather than predictive. Manual forecasting by senior ops staff was inconsistent
+                and didn't scale.
+              </p>
+              <p>
+                The goal: build a production-grade, automated forecasting system that
+                delivers accurate weekly and monthly revenue flight-hour projections,
+                quantified uncertainty, and actionable outputs for both ops planners
+                and finance leadership — <em>without</em> exposing proprietary customer data.
+              </p>
+            </div>
+          </section>
+
+          <!-- Approach -->
+          <section>
+            <h2 class="text-2xl font-bold text-foreground mb-6">Approach</h2>
+            <div class="space-y-6">
+              {approach.map(({ step, title, body }) => (
+                <div class="flex gap-5">
+                  <div class="shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span class="text-xs font-bold text-primary">{step}</span>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-foreground mb-1">{title}</h3>
+                    <p class="text-sm text-muted-foreground leading-relaxed">{body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <!-- Results -->
+          <section>
+            <h2 class="text-2xl font-bold text-foreground mb-6">Results & Business Impact</h2>
+            <div class="grid sm:grid-cols-2 gap-4 mb-6">
+              {[
+                { label: 'Weekly MAPE in production',  value: '6%',        sub: 'vs ~10% backtest baseline' },
+                { label: 'Monthly MAPE in production', value: '2%',        sub: 'Exceeds finance planning threshold' },
+                { label: 'Error reduction',            value: '40%',       sub: 'vs manual/backtest forecasts' },
+                { label: 'Savings opportunity ID\'d',  value: '$5M–$10M',  sub: 'Via better capacity planning' },
+              ].map(item => (
+                <div class="rounded-xl border border-border bg-card p-5">
+                  <p class="text-3xl font-extrabold text-primary">{item.value}</p>
+                  <p class="text-sm font-medium text-foreground mt-1">{item.label}</p>
+                  <p class="text-xs text-muted-foreground mt-0.5">{item.sub}</p>
+                </div>
+              ))}
+            </div>
+            <div class="text-muted-foreground leading-relaxed space-y-3 text-sm">
+              <p>
+                The production forecast now runs automatically each week, with outputs landing
+                in Snowflake tables and surfaced via QuickSight dashboards consumed by
+                VP-level stakeholders in Operations and Finance.
+              </p>
+              <p>
+                Improved demand visibility has allowed the ops team to reduce reactive
+                repositioning decisions, improving crew utilisation and reducing unnecessary
+                aircraft movements.
+              </p>
+            </div>
+          </section>
+
+          <!-- Lessons Learned -->
+          <section>
+            <h2 class="text-2xl font-bold text-foreground mb-6">Lessons & Challenges</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+              {lessons.map(({ title, body }) => (
+                <div class="rounded-xl border border-border bg-card p-5 hover:border-primary/40 transition-colors">
+                  <h3 class="font-semibold text-foreground mb-2">{title}</h3>
+                  <p class="text-sm text-muted-foreground leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Sidebar: Tech stack -->
+        <aside class="space-y-6">
+          <div class="sticky top-24">
+            <h2 class="text-sm font-semibold text-primary uppercase tracking-widest mb-4">Tech Stack</h2>
+            <div class="rounded-xl border border-border bg-card divide-y divide-border">
+              {techStack.map(({ name, note }) => (
+                <div class="px-4 py-3">
+                  <p class="text-sm font-semibold text-foreground font-mono">{name}</p>
+                  <p class="text-xs text-muted-foreground mt-0.5">{note}</p>
+                </div>
+              ))}
+            </div>
+
+            <!-- Back link -->
+            <div class="mt-6">
+              <a
+                href="/projects"
+                class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                </svg>
+                All Projects
+              </a>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+
+  </article>
+</Layout>
