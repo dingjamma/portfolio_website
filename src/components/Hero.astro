@@ -74,7 +74,9 @@
       </p>
 
       <a
-        href="/projects/forecasting"
+        href="https://github.com/dingjamma/fate_rag"
+        target="_blank"
+        rel="noopener noreferrer"
         class="group block rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 overflow-hidden"
       >
         <div class="p-6 sm:p-8">
@@ -86,25 +88,23 @@
                   Production
                 </span>
                 <span class="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
-                  6% MAPE weekly
+                  Live Demo
                 </span>
                 <span class="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">
-                  40% error reduction
+                  Serverless AWS
                 </span>
               </div>
 
               <h2 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                Aviation Revenue Hours Forecasting
+                Fate/RAG — Production RAG Chatbot
               </h2>
               <p class="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Built and deployed a production time-series forecasting model for revenue flight
-                hours at AirSprint. Addressed <strong class="text-foreground">$49M</strong> empty
-                leg cost exposure with a <strong class="text-foreground">$5M–$10M</strong> savings
-                opportunity identified.
+                End-to-end RAG system on AWS — Claude Sonnet + OpenSearch vector DB + FastAPI
+                backend deployed via AWS CDK. Live demo on GitHub Pages with full CI/CD pipeline.
               </p>
 
               <div class="mt-4 flex flex-wrap gap-2">
-                {['Python', 'Snowflake', 'Prophet', 'LSTM', 'QuickSight'].map(t => (
+                {['Python', 'AWS Bedrock', 'Claude Sonnet', 'OpenSearch', 'FastAPI', 'AWS CDK'].map(t => (
                   <span class="text-xs px-2 py-1 rounded bg-secondary text-secondary-foreground font-mono">
                     {t}
                   </span>
@@ -115,8 +115,8 @@
             <!-- Arrow -->
             <div class="shrink-0 self-center">
               <div class="h-10 w-10 rounded-full border border-border flex items-center justify-center text-muted-foreground group-hover:border-primary group-hover:text-primary group-hover:bg-primary/10 transition-all">
-                <svg class="h-4 w-4 translate-x-0 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6m0 0v6m0-6L10 14" />
                 </svg>
               </div>
             </div>

@@ -4,32 +4,32 @@ import ProjectCard from '@/components/ProjectCard.astro';
 
 const projects = [
   {
-    title: 'Aviation Revenue Hours Forecasting',
+    title: 'Fate/RAG — Production RAG Chatbot',
     description:
-      'Production time-series forecasting model for revenue flight hours at a fractional private aviation operator. Addressed a $49M empty-leg cost exposure and identified a $5M–$10M savings opportunity through better capacity planning.',
-    tags: ['Python', 'Snowflake', 'Prophet', 'ARIMA', 'LSTM', 'QuickSight'],
-    metrics: ['6% MAPE weekly', '2% MAPE monthly', '40% ↓ error vs baseline'],
-    href: '/projects/forecasting',
+      'End-to-end retrieval-augmented generation system deployed on AWS. Users query a knowledge base about the Fate Series via natural language — answers are grounded in curated documents with source citations. Full CI/CD pipeline, live demo hosted on GitHub Pages.',
+    tags: ['Python', 'AWS Bedrock', 'Claude Sonnet', 'OpenSearch', 'FastAPI', 'AWS CDK'],
+    metrics: ['Live demo', 'Serverless infra', 'k-NN vector search'],
+    href: 'https://github.com/dingjamma/fate_rag',
     status: 'production' as const,
-    external: false,
-  },
-  {
-    title: 'Public Aviation Demand Forecasting Demo',
-    description:
-      'Open-source demonstration of aviation demand forecasting on publicly available data. Applies similar time-series techniques (Prophet, ARIMA, seasonal decomposition) without proprietary data. GitHub link coming soon.',
-    tags: ['Python', 'Prophet', 'Pandas', 'Plotly', 'Jupyter'],
-    metrics: [],
-    href: 'https://github.com/dingjamma',
-    status: 'wip' as const,
     external: true,
   },
   {
-    title: 'Portfolio Website',
+    title: 'Pokémon Red — RL Agent',
     description:
-      'This site — built with Astro 5, Tailwind CSS v4, shadcn/ui, and TypeScript. Fully responsive, dark-mode aware, and deployed on Vercel. Source code available on GitHub.',
-    tags: ['Astro', 'TypeScript', 'Tailwind CSS v4', 'shadcn/ui'],
+      'Modular reinforcement learning codebase training a PPO agent to play Pokémon Red from pixel observations. CNN policy network (~1.7M params), parallel environment vectorisation, TensorBoard monitoring, and checkpoint management — all running locally.',
+    tags: ['Python', 'PyTorch', 'PPO', 'Gymnasium', 'PufferLib', 'TensorBoard'],
     metrics: [],
-    href: 'https://github.com/dingjamma',
+    href: 'https://github.com/dingjamma/pokemon-rl-deployment',
+    status: 'demo' as const,
+    external: true,
+  },
+  {
+    title: 'Super Bowl LX Prediction',
+    description:
+      'XGBoost binary classifier trained on 25 years of NFL data to predict Super Bowl outcomes. Key finding: regular season wins contribute 0% feature importance — defense (37%) and offense (35%) dominate. Honest evaluation with GridSearchCV and 5-fold CV.',
+    tags: ['Python', 'XGBoost', 'scikit-learn', 'Pandas', 'Jupyter', 'AWS S3'],
+    metrics: ['67.5% CV accuracy', 'Defense #1 feature'],
+    href: 'https://github.com/dingjamma/SuperbowlLXPrediction',
     status: 'demo' as const,
     external: true,
   },
@@ -38,7 +38,7 @@ const projects = [
 
 <Layout
   title="Projects – Jiajian Ding"
-  description="Data science and analytics projects by Jiajian Ding, including a production aviation forecasting system with 6% MAPE."
+  description="Data science and ML projects by Jiajian Ding — production RAG on AWS, reinforcement learning, and sports analytics."
 >
 
   <div class="section container-lg">
