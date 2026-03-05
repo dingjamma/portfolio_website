@@ -12,7 +12,7 @@ export interface Props {
 
 const {
   title,
-  description = 'Jiajian Ding – Data Scientist & Aviation Analytics Specialist. MSc Data Science, University of Calgary. Specialising in production time-series forecasting.',
+  description = 'James Ding – Data Scientist & Aviation Analytics Specialist. MSc Data Science, University of Calgary. Specialising in production time-series forecasting.',
   ogImage = '/og-default.png',
   canonical,
 } = Astro.props;
@@ -39,7 +39,7 @@ const canonicalUrl = canonical ?? `${siteUrl}${Astro.url.pathname}`;
     <meta property="og:title"       content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image"       content={`${siteUrl}${ogImage}`} />
-    <meta property="og:site_name"   content="Jiajian Ding" />
+    <meta property="og:site_name"   content="James Ding" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card"        content="summary_large_image" />
