@@ -1,6 +1,5 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import ContactForm from '@/components/ContactForm';
 
 const socials = [
   {
@@ -21,18 +20,12 @@ const socials = [
     href: 'https://x.com/dingjamma0511',
     icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 shrink-0"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.261 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
   },
-  {
-    label: 'Email',
-    value: 'james@dingjames.com',
-    href: 'mailto:james@dingjames.com',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5 shrink-0"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
-  },
 ];
 ---
 
 <Layout
   title="Contact – James Ding"
-  description="Get in touch with James Ding. Send a message or connect on LinkedIn, GitHub, or X."
+  description="Get in touch with James Ding. Connect on LinkedIn, GitHub, or email directly."
 >
 
   <div class="section container-lg">
@@ -44,78 +37,66 @@ const socials = [
         Contact
       </h1>
       <p class="text-muted-foreground text-lg leading-relaxed">
-        Have a project idea, want to collaborate, or just want to chat about data
-        science? I'd love to hear from you.
+        Have a project idea, want to collaborate, or just want to chat about data science?
+        Reach out — I'm always happy to connect.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+    <div class="max-w-lg space-y-4">
 
-      <!-- Form -->
-      <div>
-        <div class="rounded-xl border border-border bg-card p-6 sm:p-8">
-          <h2 class="text-lg font-semibold text-foreground mb-6">Send a message</h2>
-          <ContactForm client:load />
+      <!-- Email CTA (primary) -->
+      <a
+        href="mailto:james@dingjames.com"
+        class="flex items-center gap-4 rounded-xl border-2 border-primary/40 bg-primary/5 p-5 hover:border-primary hover:bg-primary/10 transition-all group"
+      >
+        <span class="shrink-0 h-11 w-11 rounded-lg bg-primary/15 flex items-center justify-center text-primary group-hover:bg-primary/25 transition-colors">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5 shrink-0">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </span>
+        <div class="min-w-0">
+          <p class="text-xs text-muted-foreground mb-0.5">Email — preferred</p>
+          <p class="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">james@dingjames.com</p>
         </div>
-      </div>
+        <svg class="h-4 w-4 text-muted-foreground ml-auto shrink-0 group-hover:text-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
 
-      <!-- Social links + info -->
-      <div class="space-y-8">
-
-        <!-- Social links -->
-        <div>
-          <h2 class="text-sm font-semibold text-primary uppercase tracking-widest mb-5">Find me online</h2>
-          <div class="space-y-3">
-            {socials.map(({ label, value, href, icon }) => (
-              <a
-                href={href}
-                target={href.startsWith('mailto') ? undefined : '_blank'}
-                rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                class="flex items-center gap-4 rounded-lg border border-border bg-card p-4 hover:border-primary/50 hover:shadow-sm transition-all group"
-              >
-                <span class="text-muted-foreground group-hover:text-primary transition-colors">
-                  <Fragment set:html={icon} />
-                </span>
-                <div class="min-w-0">
-                  <p class="text-xs text-muted-foreground">{label}</p>
-                  <p class="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{value}</p>
-                </div>
-                <svg class="h-4 w-4 text-muted-foreground ml-auto shrink-0 group-hover:text-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            ))}
+      <!-- Other socials -->
+      {socials.map(({ label, value, href, icon }) => (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-4 rounded-xl border border-border bg-card p-5 hover:border-primary/50 hover:shadow-sm transition-all group"
+        >
+          <span class="shrink-0 h-11 w-11 rounded-lg bg-muted flex items-center justify-center text-muted-foreground group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+            <Fragment set:html={icon} />
+          </span>
+          <div class="min-w-0">
+            <p class="text-xs text-muted-foreground mb-0.5">{label}</p>
+            <p class="text-sm font-semibold text-foreground group-hover:text-primary transition-colors truncate">{value}</p>
           </div>
-        </div>
+          <svg class="h-4 w-4 text-muted-foreground ml-auto shrink-0 group-hover:text-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      ))}
 
-        <!-- Response info -->
-        <div class="rounded-xl border border-border bg-card/50 p-6">
-          <h3 class="font-semibold text-foreground mb-2 flex items-center gap-2">
-            <svg class="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
-            </svg>
-            Response time
-          </h3>
-          <p class="text-sm text-muted-foreground leading-relaxed">
-            I typically respond within <strong class="text-foreground">1–2 business days</strong>.
-            For urgent matters, email me directly at
-            <a href="mailto:james@dingjames.com" class="text-primary hover:underline">james@dingjames.com</a>.
-          </p>
-        </div>
-
-        <!-- Open to work note -->
-        <div class="rounded-xl border border-primary/30 bg-primary/5 p-6">
-          <h3 class="font-semibold text-foreground mb-2 flex items-center gap-2">
-            <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Open to Opportunities
-          </h3>
-          <p class="text-sm text-muted-foreground leading-relaxed">
-            I'm open to data science roles, ML engineering positions, and consulting
-            engagements — especially in aviation, logistics, or operations analytics.
-          </p>
-        </div>
-
+      <!-- Open to work note -->
+      <div class="rounded-xl border border-primary/30 bg-primary/5 p-5 mt-6">
+        <h3 class="font-semibold text-foreground mb-1.5 flex items-center gap-2 text-sm">
+          <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Open to Opportunities
+        </h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          Actively looking for data science and ML engineering roles in the US.
+          TN visa eligible — no sponsorship required.
+        </p>
       </div>
+
     </div>
 
   </div>
