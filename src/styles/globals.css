@@ -39,7 +39,7 @@
   --card:                 oklch(1    0       0);
   --card-foreground:      oklch(0.145 0       0);
 
-  --primary:              oklch(0.512 0.244 264); /* indigo-600 */
+  --primary:              oklch(0.52 0.155 172); /* teal-600 */
   --primary-foreground:   oklch(0.985 0       0);
 
   --secondary:            oklch(0.961 0       0);
@@ -55,7 +55,7 @@
 
   --border:               oklch(0.896 0       0);
   --input:                oklch(0.896 0       0);
-  --ring:                 oklch(0.512 0.244 264);
+  --ring:                 oklch(0.52 0.155 172);
 
   --radius: 0.625rem;
 }
@@ -68,7 +68,7 @@
   --card:                 oklch(0.180 0.025 262); /* slate-900-ish */
   --card-foreground:      oklch(0.985 0.002 262);
 
-  --primary:              oklch(0.618 0.220 264); /* indigo-400 */
+  --primary:              oklch(0.907 0.123 166); /* mint #7bffd4 */
   --primary-foreground:   oklch(0.130 0.028 262);
 
   --secondary:            oklch(0.240 0.022 262);
@@ -84,7 +84,7 @@
 
   --border:               oklch(0.280 0.022 262);
   --input:                oklch(0.280 0.022 262);
-  --ring:                 oklch(0.618 0.220 264);
+  --ring:                 oklch(0.907 0.123 166);
 }
 
 /* ── Base styles ───────────────────────────────────────────── */
@@ -112,7 +112,7 @@
   }
   /* Gradient text helper */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-indigo-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-emerald-300 bg-clip-text text-transparent;
   }
   /* Section spacing */
   .section {
