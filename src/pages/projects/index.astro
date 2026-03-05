@@ -8,10 +8,10 @@ const projects = [
     description:
       'End-to-end retrieval-augmented generation system deployed on AWS. Users query a knowledge base about the Fate Series via natural language — answers are grounded in curated documents with source citations. Full CI/CD pipeline, live demo hosted on GitHub Pages.',
     tags: ['Python', 'AWS Bedrock', 'Claude Sonnet', 'OpenSearch', 'FastAPI', 'AWS CDK'],
-    metrics: ['Live demo', 'Serverless infra', 'k-NN vector search'],
+    metrics: ['Serverless infra', 'k-NN vector search'],
     href: 'https://github.com/dingjamma/fate_rag',
+    demoHref: 'https://dingjamma.github.io/fate_rag/',
     status: 'production' as const,
-    external: true,
   },
   {
     title: 'Pokémon Red — RL Agent',
@@ -21,7 +21,6 @@ const projects = [
     metrics: [],
     href: 'https://github.com/dingjamma/pokemon-rl-deployment',
     status: 'demo' as const,
-    external: true,
   },
   {
     title: 'Super Bowl LX Prediction',
@@ -31,7 +30,6 @@ const projects = [
     metrics: ['67.5% CV accuracy', 'Defense #1 feature'],
     href: 'https://github.com/dingjamma/SuperbowlLXPrediction',
     status: 'demo' as const,
-    external: true,
   },
 ];
 ---
