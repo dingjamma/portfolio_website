@@ -1,0 +1,66 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout
+  title="Resume – James Ding"
+  description="Resume of James Ding — ML Engineer & Data Scientist. MDSA, University of Calgary. Background in private aviation, logistics, and agriculture. TN visa eligible."
+>
+
+  <div class="section container-lg">
+
+    <!-- Header -->
+    <div class="mb-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+      <div>
+        <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Resume</p>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
+          James Ding
+        </h1>
+        <p class="mt-2 text-muted-foreground text-lg">ML Engineer · Data Scientist</p>
+        <span class="mt-3 inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+          <svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
+          </svg>
+          TN Visa Eligible · Open to US Roles
+        </span>
+      </div>
+
+      <!-- Download button -->
+      <a
+        href="/resume.pdf"
+        download
+        class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow hover:bg-primary/90 transition-colors self-start sm:self-auto"
+      >
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z" />
+        </svg>
+        Download PDF
+      </a>
+    </div>
+
+    <!-- PDF embed -->
+    <div class="rounded-xl border border-border overflow-hidden bg-card shadow-sm">
+      <iframe
+        src="/resume.pdf"
+        title="James Ding Resume"
+        class="w-full"
+        style="height: min(90vh, 1100px);"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Fallback message for browsers that block PDF embeds -->
+    <p class="mt-4 text-center text-sm text-muted-foreground">
+      Can't see the PDF?
+      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">
+        Open it in a new tab
+      </a>
+      or
+      <a href="/resume.pdf" download class="text-primary hover:underline">
+        download it directly
+      </a>.
+    </p>
+
+  </div>
+
+</Layout>
