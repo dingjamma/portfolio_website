@@ -15,9 +15,9 @@ const projects = [
   {
     title: 'Fate/RAG — RAG Chatbot (Archived)',
     description:
-      'End-to-end retrieval-augmented generation system deployed on AWS. Users query a knowledge base about the Fate Series via natural language — answers grounded in curated documents with source citations. Serverless infra via AWS CDK. (Offline — too expensive to run.)',
-    tags: ['Python', 'AWS Bedrock', 'Claude Sonnet', 'OpenSearch', 'FastAPI', 'AWS CDK'],
-    metrics: ['Serverless infra', 'k-NN vector search'],
+      'Production-grade RAG chatbot for the Fate Series universe on AWS. Full serverless stack: FastAPI on Lambda via Mangum, API Gateway, OpenSearch Serverless k-NN vector search, and AWS Bedrock (Claude Sonnet + Titan Embeddings). GitHub Actions CI/CD pipeline runs pytest on every PR and auto-deploys to AWS via CDK on merge to main. Docker Compose for local dev.',
+    tags: ['Python', 'AWS Bedrock', 'Claude Sonnet', 'OpenSearch', 'FastAPI', 'AWS Lambda', 'API Gateway', 'AWS CDK', 'GitHub Actions', 'Docker', 'pytest', 'Mangum', 'Pydantic'],
+    metrics: ['Serverless infra', 'k-NN vector search (HNSW)', 'CI/CD auto-deploy', 'SSE streaming'],
     href: 'https://github.com/dingjamma/fate_rag',
     status: 'wip' as const,
   },
