@@ -9,34 +9,48 @@ const skills = [
 
   // Data & ML
   { name: 'Time-Series Forecasting', category: 'ML/Analytics' },
+  { name: 'RAG Pipelines',    category: 'ML/Analytics' },
   { name: 'PyTorch',          category: 'ML/Analytics' },
   { name: 'Prophet / ARIMA',  category: 'ML/Analytics' },
   { name: 'LSTM / Transformers', category: 'ML/Analytics' },
+  { name: 'XGBoost / scikit-learn', category: 'ML/Analytics' },
   { name: 'EDA & Feature Engineering', category: 'ML/Analytics' },
-  { name: 'scikit-learn',     category: 'ML/Analytics' },
+  { name: 'Vector Search (k-NN / HNSW)', category: 'ML/Analytics' },
 
-  // Data Infra
-  { name: 'Snowflake',        category: 'Data Infra' },
-  { name: 'Amazon QuickSight',category: 'Data Infra' },
-  { name: 'MLOps Basics',     category: 'Data Infra' },
+  // Cloud & Infra
+  { name: 'AWS Bedrock',      category: 'Cloud & Infra' },
+  { name: 'AWS Lambda',       category: 'Cloud & Infra' },
+  { name: 'API Gateway',      category: 'Cloud & Infra' },
+  { name: 'OpenSearch Serverless', category: 'Cloud & Infra' },
+  { name: 'AWS CDK',          category: 'Cloud & Infra' },
+  { name: 'S3',               category: 'Cloud & Infra' },
+  { name: 'Snowflake',        category: 'Cloud & Infra' },
+  { name: 'Amazon QuickSight',category: 'Cloud & Infra' },
+
+  // DevOps / Backend
+  { name: 'GitHub Actions CI/CD', category: 'DevOps' },
+  { name: 'Docker / Compose', category: 'DevOps' },
+  { name: 'FastAPI',          category: 'DevOps' },
+  { name: 'pytest',           category: 'DevOps' },
+  { name: 'Git & GitHub',     category: 'DevOps' },
 
   // Web / Viz
   { name: 'Astro',            category: 'Web' },
-  { name: 'Tailwind CSS',     category: 'Web' },
   { name: 'React',            category: 'Web' },
+  { name: 'Tailwind CSS',     category: 'Web' },
 
   // Soft / Process
   { name: 'Business Stakeholder Comms', category: 'Process' },
   { name: 'Agile / Scrum',    category: 'Process' },
-  { name: 'Git & GitHub',     category: 'Process' },
 ];
 
 const categoryColors: Record<string, string> = {
-  'Core':         'bg-indigo-100 text-indigo-700 border-indigo-200 dark:bg-indigo-900/40 dark:text-indigo-300 dark:border-indigo-800',
-  'ML/Analytics': 'bg-violet-100 text-violet-700 border-violet-200 dark:bg-violet-900/40 dark:text-violet-300 dark:border-violet-800',
-  'Data Infra':   'bg-sky-100   text-sky-700   border-sky-200   dark:bg-sky-900/40   dark:text-sky-300   dark:border-sky-800',
-  'Web':          'bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-900/40 dark:text-emerald-300 dark:border-emerald-800',
-  'Process':      'bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-900/40 dark:text-amber-300 dark:border-amber-800',
+  'Core':           'bg-indigo-100 text-indigo-700 border-indigo-200 dark:bg-indigo-900/40 dark:text-indigo-300 dark:border-indigo-800',
+  'ML/Analytics':   'bg-violet-100 text-violet-700 border-violet-200 dark:bg-violet-900/40 dark:text-violet-300 dark:border-violet-800',
+  'Cloud & Infra':  'bg-sky-100   text-sky-700   border-sky-200   dark:bg-sky-900/40   dark:text-sky-300   dark:border-sky-800',
+  'DevOps':         'bg-rose-100  text-rose-700  border-rose-200  dark:bg-rose-900/40  dark:text-rose-300  dark:border-rose-800',
+  'Web':            'bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-900/40 dark:text-emerald-300 dark:border-emerald-800',
+  'Process':        'bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-900/40 dark:text-amber-300 dark:border-amber-800',
 };
 
 const experience = [
@@ -118,18 +132,36 @@ const experience = [
         <section>
           <h2 class="text-sm font-semibold text-primary uppercase tracking-widest mb-6">Education</h2>
 
-          <div class="rounded-xl border border-border bg-card p-6">
-            <div class="flex items-start gap-4">
-              <div class="shrink-0 h-10 w-10 rounded-md bg-primary/10 flex items-center justify-center">
-                <svg class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path d="M12 14l9-5-9-5-9 5 9 5z"/>
-                  <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
-                </svg>
+          <div class="space-y-3">
+            <div class="rounded-xl border border-border bg-card p-6">
+              <div class="flex items-start gap-4">
+                <div class="shrink-0 h-10 w-10 rounded-md bg-primary/10 flex items-center justify-center">
+                  <svg class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-foreground">MDSA — Master of Data Science and Analytics</p>
+                  <p class="text-sm text-primary mt-0.5">University of Calgary</p>
+                  <p class="text-xs text-muted-foreground mt-1">Calgary, AB, Canada</p>
+                </div>
               </div>
-              <div>
-                <p class="font-semibold text-foreground">MDSA — Master of Data Science and Analytics</p>
-                <p class="text-sm text-primary mt-0.5">University of Calgary</p>
-                <p class="text-xs text-muted-foreground mt-1">Calgary, AB, Canada</p>
+            </div>
+
+            <div class="rounded-xl border border-border bg-card p-6">
+              <div class="flex items-start gap-4">
+                <div class="shrink-0 h-10 w-10 rounded-md bg-primary/10 flex items-center justify-center">
+                  <svg class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-foreground">BSc — Agricultural and Consumer Economics</p>
+                  <p class="text-sm text-primary mt-0.5">University of Illinois Urbana-Champaign</p>
+                  <p class="text-xs text-muted-foreground mt-1">Champaign, IL, USA</p>
+                </div>
               </div>
             </div>
           </div>
