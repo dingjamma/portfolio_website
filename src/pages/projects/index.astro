@@ -4,14 +4,22 @@ import ProjectCard from '@/components/ProjectCard.astro';
 
 const projects = [
   {
-    title: 'Fate/RAG — Production RAG Chatbot',
+    title: 'AI Judge — SCOTUS Verdict Backtester',
     description:
-      'End-to-end retrieval-augmented generation system deployed on AWS. Users query a knowledge base about the Fate Series via natural language — answers are grounded in curated documents with source citations. Full CI/CD pipeline, live demo hosted on GitHub Pages.',
+      'Can AI predict Supreme Court rulings? Retrieves 200 landmark SCOTUS decisions from CourtListener and runs a RAG pipeline with temporal leakage prevention — Claude 3.5 Haiku on AWS Bedrock, FAISS vector search, MLflow experiment tracking, and a Streamlit dashboard. 45.7% backtested accuracy.',
+    tags: ['Python', 'AWS Bedrock', 'Claude Haiku', 'FAISS', 'MLflow', 'Streamlit', 'SQLite'],
+    metrics: ['45.7% backtested accuracy', 'Temporal leakage prevention', '200 SCOTUS cases'],
+    href: 'https://github.com/dingjamma/ai_judge',
+    status: 'demo' as const,
+  },
+  {
+    title: 'Fate/RAG — RAG Chatbot (Archived)',
+    description:
+      'End-to-end retrieval-augmented generation system deployed on AWS. Users query a knowledge base about the Fate Series via natural language — answers grounded in curated documents with source citations. Serverless infra via AWS CDK. (Offline — too expensive to run.)',
     tags: ['Python', 'AWS Bedrock', 'Claude Sonnet', 'OpenSearch', 'FastAPI', 'AWS CDK'],
     metrics: ['Serverless infra', 'k-NN vector search'],
     href: 'https://github.com/dingjamma/fate_rag',
-    demoHref: 'https://dingjamma.github.io/fate_rag/',
-    status: 'production' as const,
+    status: 'wip' as const,
   },
   {
     title: 'Pokémon Red — RL Agent',
