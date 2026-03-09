@@ -4,30 +4,26 @@ import Layout from '@/layouts/Layout.astro';
 
 <Layout
   title="Resume – James Ding"
-  description="Resume of James Ding — ML Engineer & Data Scientist. MDSA, University of Calgary. Background in private aviation, logistics, and agriculture. TN visa eligible."
+  description="Resume of James Ding — Data Scientist & Analyst. MDSA, University of Calgary. TN visa eligible."
 >
 
   <div class="section container-lg">
 
     <!-- Header -->
-    <div class="mb-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+    <div class="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
       <div>
         <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Resume</p>
-        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
-          James Ding
-        </h1>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">James Ding</h1>
         <p class="mt-2 text-muted-foreground text-lg">Data Scientist · Analyst</p>
         <span class="mt-3 inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
           <svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
           </svg>
-          TN Visa Eligible · Open to US Roles
+          TN Visa Eligible · No Sponsorship Required
         </span>
       </div>
-
-      <!-- Download button -->
       <a
-        href="/resume.pdf"
+        href="/JamesDing_Resume.pdf"
         download
         class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow hover:bg-primary/90 transition-colors self-start sm:self-auto"
       >
@@ -38,29 +34,116 @@ import Layout from '@/layouts/Layout.astro';
       </a>
     </div>
 
-    <!-- PDF embed -->
-    <div class="rounded-xl border border-border overflow-hidden bg-card shadow-sm">
-      <iframe
-        src="/resume.pdf"
-        title="James Ding Resume"
-        class="w-full"
-        style="height: min(90vh, 1100px);"
-        loading="lazy"
-      ></iframe>
+    <!-- Resume body -->
+    <div class="rounded-xl border border-border bg-card shadow-sm p-8 sm:p-12 max-w-4xl mx-auto font-sans text-sm text-foreground leading-relaxed">
+
+      <!-- Name + contact -->
+      <div class="text-center mb-6 border-b border-border pb-6">
+        <h2 class="text-3xl font-bold tracking-tight text-foreground">James Ding</h2>
+        <p class="mt-1 text-muted-foreground text-xs">
+          604-842-6134 &nbsp;|&nbsp;
+          <a href="mailto:james@dingjames.com" class="underline hover:text-primary transition-colors">james@dingjames.com</a>
+          &nbsp;|&nbsp;
+          <a href="https://linkedin.com/in/jam-ding" target="_blank" rel="noopener noreferrer" class="underline hover:text-primary transition-colors">LinkedIn</a>
+          &nbsp;|&nbsp;
+          <a href="https://github.com/dingjamma" target="_blank" rel="noopener noreferrer" class="underline hover:text-primary transition-colors">GitHub</a>
+          &nbsp;|&nbsp;
+          <a href="https://dingjames.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-primary transition-colors">Portfolio</a>
+        </p>
+        <p class="mt-1 text-muted-foreground text-xs">Calgary, AB · TN Visa Eligible · Relocating to the U.S.</p>
+      </div>
+
+      <!-- Professional Summary -->
+      <section class="mb-6">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-3">Professional Summary</h3>
+        <p class="text-muted-foreground">
+          Data Analyst who ships production ML models, RAG pipelines, and AWS infrastructure. Looking for a team where data drives decisions.
+        </p>
+      </section>
+
+      <!-- Work Experience -->
+      <section class="mb-6">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-4">Work Experience</h3>
+
+        <div>
+          <div class="flex justify-between items-baseline">
+            <span class="font-bold text-foreground">Associate Data Analyst</span>
+            <span class="text-muted-foreground text-xs whitespace-nowrap">May 2025 – Present</span>
+          </div>
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="text-primary text-xs font-medium">AirSprint Inc.</span>
+            <span class="text-muted-foreground text-xs">Calgary, AB</span>
+          </div>
+          <ul class="space-y-1.5 text-muted-foreground">
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Conducted EDA on 12 years of flight operations data across 78K+ flights to identify key demand drivers, seasonality factors, and a COVID-era regime shift informing model design</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built and deployed a Prophet time-series forecasting model achieving 10% weekly / 7% monthly MAPE in backtesting and 6% weekly / 2% monthly MAPE in live 2026 production, targeting 1%+ reduction in $49M annual empty leg positioning costs</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built automated data ingestion pipelines (FL3XX, Salesforce, Foreflight → AWS Lambda → S3 → Snowflake) with end-to-end data quality monitoring and alerting</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Designed a data-driven RBAC workaround for FL3XX's booking platform by building a cleansing and segmentation pipeline with custom business logic mapping user roles (owner, individual, full access) and a manual override layer to manage edge cases</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built QuickSight dashboards enabling real-time monitoring of operational KPIs, flight demand trends, and fleet utilization for executive and operational stakeholders</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="mb-6">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-4">Projects</h3>
+
+        <div>
+          <div class="flex justify-between items-baseline">
+            <span class="font-bold text-foreground">AI Judge — SCOTUS Verdict Backtester</span>
+            <span class="text-muted-foreground text-xs whitespace-nowrap">Mar 2026</span>
+          </div>
+          <div class="mb-2">
+            <a href="https://github.com/dingjamma/ai_judge" target="_blank" rel="noopener noreferrer" class="text-primary text-xs hover:underline">github.com/dingjamma/ai_judge</a>
+          </div>
+          <ul class="space-y-1.5 text-muted-foreground">
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built a RAG backtesting pipeline over 200 landmark SCOTUS cases with temporal leakage prevention — Claude 3.5 Haiku on AWS Bedrock, FAISS vector search, MLflow experiment tracking, and a Streamlit dashboard; achieved 45.7% backtested accuracy on held-out cases</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="mb-6">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-4">Education</h3>
+
+        <div class="space-y-3">
+          <div class="flex justify-between items-baseline">
+            <div>
+              <span class="font-bold text-foreground">Master of Data Science & Analytics</span>
+              <p class="text-muted-foreground text-xs">University of Calgary</p>
+            </div>
+            <div class="text-right">
+              <span class="text-muted-foreground text-xs whitespace-nowrap">Dec 2025</span>
+              <p class="text-muted-foreground text-xs">Calgary, AB</p>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-baseline">
+            <div>
+              <span class="font-bold text-foreground">Bachelor of Science, Agriculture Commerce</span>
+              <p class="text-muted-foreground text-xs">University of Illinois at Urbana-Champaign</p>
+            </div>
+            <div class="text-right">
+              <span class="text-muted-foreground text-xs whitespace-nowrap">May 2016</span>
+              <p class="text-muted-foreground text-xs">Champaign, IL</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Skills -->
+      <section>
+        <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-3">Technical Skills</h3>
+        <div class="space-y-1.5 text-muted-foreground">
+          <p><span class="font-semibold text-foreground">Programming:</span> Python, SQL, R, JavaScript</p>
+          <p><span class="font-semibold text-foreground">Machine Learning & Statistics:</span> XGBoost, Random Forest, Prophet, ARIMA, GLM/Regression, scikit-learn, GridSearchCV, cross-validation, feature engineering, time series analysis, statistical testing, A/B testing, experimental design, LLM application development (RAG, grounding, prompt/agent design, tool use, evaluation)</p>
+          <p><span class="font-semibold text-foreground">Data & Cloud:</span> Snowflake, AWS (Lambda, S3, AppFlow, QuickSight, EventBridge, Bedrock, OpenSearch Serverless, API Gateway, CDK), pandas, NumPy, Excel, Git, REST APIs, JSON, CI/CD (GitHub Actions)</p>
+          <p><span class="font-semibold text-foreground">ETL & Data Engineering:</span> ETL/ELT pipelines, data quality monitoring, dimensional modeling, data warehousing</p>
+          <p><span class="font-semibold text-foreground">Visualization & BI:</span> matplotlib, seaborn, Plotly, Plotly Dash, QuickSight, Power BI, Tableau, Streamlit, interactive dashboards</p>
+        </div>
+      </section>
+
     </div>
 
-    <!-- Fallback message for browsers that block PDF embeds -->
-    <p class="mt-4 text-center text-sm text-muted-foreground">
-      Can't see the PDF?
-      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">
-        Open it in a new tab
-      </a>
-      or
-      <a href="/resume.pdf" download class="text-primary hover:underline">
-        download it directly
-      </a>.
-    </p>
-
   </div>
-
 </Layout>
