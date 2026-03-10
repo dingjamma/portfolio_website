@@ -24,9 +24,9 @@ const projects = [
   {
     title: 'Pokémon Red — RL Agent',
     description:
-      'Modular reinforcement learning codebase training a PPO agent to play Pokémon Red from pixel observations. CNN policy network (~1.7M params), parallel environment vectorisation, TensorBoard monitoring, and checkpoint management — all running locally.',
-    tags: ['Python', 'PyTorch', 'PPO', 'Gymnasium', 'PufferLib', 'TensorBoard'],
-    metrics: [],
+      'Operationalized an open-source PPO agent (Peter Whidden) to play Pokémon Red as a hands-on RL learning project. Diagnosed and fixed a critical disk usage bug — the training loop was saving a screenshot on every negative reward step, generating hundreds of GBs in minutes. Redirected checkpoint storage to a secondary drive, configured the environment for local and cloud (AWS EC2) execution, and set up W&B for live experiment tracking.',
+    tags: ['Python', 'PyTorch', 'PPO', 'Stable Baselines 3', 'Gymnasium', 'PyBoy', 'AWS EC2', 'W&B', 'TensorBoard'],
+    metrics: ['Fixed runaway disk I/O bug', 'AWS EC2 cloud deployment', 'W&B experiment tracking'],
     href: 'https://github.com/dingjamma/pokemon-rl-deployment',
     status: 'demo' as const,
   },
