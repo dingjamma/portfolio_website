@@ -11,6 +11,7 @@ const projects = [
     metrics: ['5/5 predictions validated same day', '72-agent simulation rounds', 'Single article input'],
     href: 'https://github.com/dingjamma/MiroFish',
     status: 'demo' as const,
+    forked: true,
   },
   {
     title: 'AI Judge — SCOTUS Verdict Backtester',
@@ -36,8 +37,9 @@ const projects = [
       'Operationalized an open-source PPO agent (Peter Whidden) to play Pokémon Red as a hands-on RL learning project. Diagnosed and fixed a critical disk usage bug — the training loop was saving a screenshot on every negative reward step, generating hundreds of GBs in minutes. Redirected checkpoint storage to a secondary drive, configured the environment for local and cloud (AWS EC2) execution, and set up W&B for live experiment tracking.',
     tags: ['Python', 'PyTorch', 'PPO', 'Stable Baselines 3', 'Gymnasium', 'PyBoy', 'AWS EC2', 'W&B', 'TensorBoard'],
     metrics: ['Fixed runaway disk I/O bug', 'AWS EC2 cloud deployment', 'W&B experiment tracking'],
-    href: 'https://github.com/dingjamma/pokemon-rl-deployment',
+    href: 'https://github.com/dingjamma/PokemonRedExperiments',
     status: 'demo' as const,
+    forked: true,
   },
   {
     title: 'Super Bowl LX Prediction',
