@@ -4,6 +4,15 @@ import ProjectCard from '@/components/ProjectCard.astro';
 
 const projects = [
   {
+    title: 'MiroFish — Geopolitical Simulation Engine',
+    description:
+      'Forked and extended an open-source multi-agent simulation engine (AGPL-3.0). Fed a single CBC News article about the US strike on Iran\'s Kharg Island into MiroFish and ran a 72-round, 8-agent simulation. The engine built a knowledge graph via GraphRAG, assigned independent AI agents to actors (Trump, IRGC, UAE, global oil markets), and simulated 72 hours of emergent geopolitical behavior across two social media platforms. Key predictions — Iran would selectively block the Strait to US/Israel only, India and Turkey would trade independently, and Trump would build a naval coalition — were validated within hours by real-world events on the same day.',
+    tags: ['Python', 'Multi-Agent AI', 'GraphRAG', 'Zep', 'Flask', 'React', 'Claude Haiku', 'OASIS', 'CAMEL-AI'],
+    metrics: ['5/5 predictions validated same day', '72-agent simulation rounds', 'Single article input'],
+    href: 'https://github.com/dingjamma/MiroFish',
+    status: 'demo' as const,
+  },
+  {
     title: 'AI Judge — SCOTUS Verdict Backtester',
     description:
       'Can AI predict Supreme Court rulings? Retrieves 200 landmark SCOTUS decisions from CourtListener and runs a RAG pipeline with temporal leakage prevention — Claude 3.5 Haiku on AWS Bedrock, FAISS vector search, MLflow experiment tracking, and a Streamlit dashboard. 45.7% backtested accuracy.',
