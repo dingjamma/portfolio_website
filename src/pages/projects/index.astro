@@ -4,6 +4,15 @@ import ProjectCard from '@/components/ProjectCard.astro';
 
 const projects = [
   {
+    title: 'Calgary Housing Price Predictor',
+    description:
+      'Full automated pipeline — no manual downloads. Scrapes CREB monthly PDFs, City of Calgary assessed values (2005–2025), Bank of Canada rates, and daily WTI oil prices. Three XGBoost models at annual, monthly, and daily resolution. The daily Housing Pressure Score flipped negative on March 10 as oil crossed $83 — now reading -0.13% at $100/barrel. Integrates MiroFish geopolitical simulation: the same Kharg Island scenario that predicted the oil spike same-day feeds directly into the housing forecast.',
+    tags: ['Python', 'XGBoost', 'pdfplumber', 'yfinance', 'Bank of Canada API', 'MiroFish', 'Pandas', 'Wayback Machine'],
+    metrics: ['5,600+ days of daily data', '3 XGBoost models', 'Live pressure score', '2005–2026 coverage'],
+    href: 'https://github.com/dingjamma/Calgary-Housing',
+    status: 'wip' as const,
+  },
+  {
     title: 'MiroFish — Geopolitical Simulation Engine',
     description:
       'Forked and extended an open-source multi-agent simulation engine (AGPL-3.0). Fed a single CBC News article about the US strike on Iran\'s Kharg Island into MiroFish and ran a 72-round, 8-agent simulation. The engine built a knowledge graph via GraphRAG, assigned independent AI agents to actors (Trump, IRGC, UAE, global oil markets), and simulated 72 hours of emergent geopolitical behavior across two social media platforms. Key predictions — Iran would selectively block the Strait to US/Israel only, India and Turkey would trade independently, and Trump would build a naval coalition — were validated within hours by real-world events on the same day.',
