@@ -57,7 +57,7 @@ import Layout from '@/layouts/Layout.astro';
       <section class="mb-6">
         <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-3">Professional Summary</h3>
         <p class="text-muted-foreground">
-          Data Scientist who builds end-to-end automated intelligence systems — from raw data scraping through ML modeling to multi-agent AI simulation. Production experience deploying forecasting models at AirSprint (6% live MAPE, $490K+ cost reduction). Recent independent work spans a fully automated Calgary Housing pipeline: 21 years of data, three XGBoost models, live news ingestion, auto-generated market reports, and a MiroFish geopolitical simulation that predicts housing outcomes through emergent AI agent behavior. TN visa eligible, targeting US Data Science and ML Engineering roles.
+          Data Scientist with production ML experience and a track record of shipping end-to-end data systems. Built forecasting models at AirSprint (6% live MAPE, $490K+ cost reduction) and an automated Calgary Housing intelligence pipeline spanning data scraping, XGBoost modeling, live news ingestion, and multi-agent geopolitical simulation. TN visa eligible, targeting US Data Science and ML Engineering roles.
         </p>
       </section>
 
@@ -75,11 +75,8 @@ import Layout from '@/layouts/Layout.astro';
             <span class="text-muted-foreground text-xs">Calgary, AB</span>
           </div>
           <ul class="space-y-1.5 text-muted-foreground">
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Conducted EDA on 12 years of flight operations data across 78K+ flights to identify key demand drivers, seasonality factors, and a COVID-era regime shift informing model design</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built and deployed a Prophet time-series forecasting model achieving 10% weekly / 7% monthly MAPE in backtesting and 6% weekly / 2% monthly MAPE in live 2026 production, targeting 1%+ reduction in $49M annual empty leg positioning costs</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built automated data ingestion pipelines (FL3XX, Salesforce, Foreflight → AWS Lambda → S3 → Snowflake) with end-to-end data quality monitoring and alerting</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Designed a data-driven RBAC workaround for FL3XX's booking platform by building a cleansing and segmentation pipeline with custom business logic mapping user roles (owner, individual, full access) and a manual override layer to manage edge cases</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built QuickSight dashboards enabling real-time monitoring of operational KPIs, flight demand trends, and fleet utilization for executive and operational stakeholders</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built and deployed a Prophet forecasting model on 12 years of flight data (78K+ flights), achieving 6% weekly MAPE in live 2026 production and targeting $490K+ reduction in annual empty leg positioning costs</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Architected automated ingestion pipelines (FL3XX, Salesforce, Foreflight → Lambda → S3 → Snowflake) and QuickSight dashboards for executive stakeholders</span></li>
           </ul>
         </div>
       </section>
@@ -89,9 +86,9 @@ import Layout from '@/layouts/Layout.astro';
         <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-4">Projects</h3>
 
         <!-- Calgary Housing -->
-        <div class="mb-5">
+        <div class="mb-4">
           <div class="flex justify-between items-baseline">
-            <span class="font-bold text-foreground">Calgary Housing Price Predictor — Full Intelligence Pipeline</span>
+            <span class="font-bold text-foreground">Calgary Housing Price Predictor</span>
             <span class="text-muted-foreground text-xs whitespace-nowrap">Mar 2026</span>
           </div>
           <div class="mb-2 flex gap-3">
@@ -100,24 +97,8 @@ import Layout from '@/layouts/Layout.astro';
             <a href="https://calgary-housing-7phh7dhjyyd2r7mtjymuvm.streamlit.app" target="_blank" rel="noopener noreferrer" class="text-primary text-xs hover:underline">Live Dashboard</a>
           </div>
           <ul class="space-y-1.5 text-muted-foreground">
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built a fully automated data pipeline with no manual downloads — scrapes 21 years of housing, oil, and economic data from City of Calgary Socrata API, CREB monthly PDFs (pdfplumber + Wayback Machine), Bank of Canada Valet API, and yfinance at daily resolution</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Trained three XGBoost models at annual (19 years), monthly (44 CREB months), and daily (946 days) resolution; daily Housing Pressure Score reads +1.66% at current $100/barrel WTI, signaling short-term uncertainty despite long-term bullish fundamentals</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built an intelligence layer that scrapes live news via RSS (CBC Calgary, OilPrice.com, Better Dwelling), auto-generates a structured market report, then feeds it into MiroFish — a multi-agent geopolitical simulation running 8 AI actors (Bank of Canada, OPEC+, Iran/IRGC, Alberta energy sector, Calgary buyer segments) on a Zep GraphRAG knowledge graph via qwen-plus</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Deployed live Streamlit dashboard; automated full pipeline via GitHub Actions (biweekly) — scrape, retrain, news, report, simulate, translate Chinese output to English, commit all results back to GitHub automatically</span></li>
-          </ul>
-        </div>
-
-        <!-- AI Judge -->
-        <div>
-          <div class="flex justify-between items-baseline">
-            <span class="font-bold text-foreground">AI Judge — SCOTUS Verdict Backtester</span>
-            <span class="text-muted-foreground text-xs whitespace-nowrap">Mar 2026</span>
-          </div>
-          <div class="mb-2">
-            <a href="https://github.com/dingjamma/ai_judge" target="_blank" rel="noopener noreferrer" class="text-primary text-xs hover:underline">github.com/dingjamma/ai_judge</a>
-          </div>
-          <ul class="space-y-1.5 text-muted-foreground">
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built a RAG backtesting pipeline over 200 landmark SCOTUS cases with temporal leakage prevention — Claude 3.5 Haiku on AWS Bedrock, FAISS vector search, MLflow experiment tracking, and a Streamlit dashboard; achieved 45.7% backtested accuracy on held-out cases</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Fully automated pipeline scraping 21 years of housing, oil, and economic data; trained three XGBoost models (annual, monthly, daily) with a live Housing Pressure Score deployed on Streamlit</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built an intelligence layer — live news scraper, auto-generated market reports, and a MiroFish multi-agent simulation (8 AI actors: BoC, OPEC+, Iran/IRGC, Alberta energy, Calgary buyers) predicting December 2026 housing outcomes; automated biweekly via GitHub Actions</span></li>
           </ul>
         </div>
       </section>
