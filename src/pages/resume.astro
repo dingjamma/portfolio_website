@@ -57,7 +57,7 @@ import Layout from '@/layouts/Layout.astro';
       <section class="mb-6">
         <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-3">Professional Summary</h3>
         <p class="text-muted-foreground">
-          Data Analyst who ships production ML models, RAG pipelines, and AWS infrastructure. Looking for a team where data drives decisions.
+          Data Scientist who builds end-to-end automated intelligence systems — from raw data scraping through ML modeling to multi-agent AI simulation. Production experience deploying forecasting models at AirSprint (6% live MAPE, $490K+ cost reduction). Recent independent work spans a fully automated Calgary Housing pipeline: 21 years of data, three XGBoost models, live news ingestion, auto-generated market reports, and a MiroFish geopolitical simulation that predicts housing outcomes through emergent AI agent behavior. TN visa eligible, targeting US Data Science and ML Engineering roles.
         </p>
       </section>
 
@@ -88,6 +88,26 @@ import Layout from '@/layouts/Layout.astro';
       <section class="mb-6">
         <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-4">Projects</h3>
 
+        <!-- Calgary Housing -->
+        <div class="mb-5">
+          <div class="flex justify-between items-baseline">
+            <span class="font-bold text-foreground">Calgary Housing Price Predictor — Full Intelligence Pipeline</span>
+            <span class="text-muted-foreground text-xs whitespace-nowrap">Mar 2026</span>
+          </div>
+          <div class="mb-2 flex gap-3">
+            <a href="https://github.com/dingjamma/Calgary-Housing" target="_blank" rel="noopener noreferrer" class="text-primary text-xs hover:underline">github.com/dingjamma/Calgary-Housing</a>
+            <span class="text-muted-foreground text-xs">·</span>
+            <a href="https://calgary-housing-7phh7dhjyyd2r7mtjymuvm.streamlit.app" target="_blank" rel="noopener noreferrer" class="text-primary text-xs hover:underline">Live Dashboard</a>
+          </div>
+          <ul class="space-y-1.5 text-muted-foreground">
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built a fully automated data pipeline with no manual downloads — scrapes 21 years of housing, oil, and economic data from City of Calgary Socrata API, CREB monthly PDFs (pdfplumber + Wayback Machine), Bank of Canada Valet API, and yfinance at daily resolution</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Trained three XGBoost models at annual (19 years), monthly (44 CREB months), and daily (946 days) resolution; daily Housing Pressure Score reads +1.66% at current $100/barrel WTI, signaling short-term uncertainty despite long-term bullish fundamentals</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built an intelligence layer that scrapes live news via RSS (CBC Calgary, OilPrice.com, Better Dwelling), auto-generates a structured market report, then feeds it into MiroFish — a multi-agent geopolitical simulation running 8 AI actors (Bank of Canada, OPEC+, Iran/IRGC, Alberta energy sector, Calgary buyer segments) on a Zep GraphRAG knowledge graph via qwen-plus</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Deployed live Streamlit dashboard; automated full pipeline via GitHub Actions (biweekly) — scrape, retrain, news, report, simulate, translate Chinese output to English, commit all results back to GitHub automatically</span></li>
+          </ul>
+        </div>
+
+        <!-- AI Judge -->
         <div>
           <div class="flex justify-between items-baseline">
             <span class="font-bold text-foreground">AI Judge — SCOTUS Verdict Backtester</span>
@@ -136,8 +156,9 @@ import Layout from '@/layouts/Layout.astro';
         <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-3">Technical Skills</h3>
         <div class="space-y-1.5 text-muted-foreground">
           <p><span class="font-semibold text-foreground">Programming:</span> Python, SQL, R, JavaScript</p>
-          <p><span class="font-semibold text-foreground">Machine Learning & Statistics:</span> XGBoost, Random Forest, Prophet, ARIMA, GLM/Regression, scikit-learn, GridSearchCV, cross-validation, feature engineering, time series analysis, statistical testing, A/B testing, experimental design, LLM application development (RAG, grounding, prompt/agent design, tool use, evaluation)</p>
-          <p><span class="font-semibold text-foreground">Data & Cloud:</span> Snowflake, AWS (Lambda, S3, AppFlow, QuickSight, EventBridge, Bedrock, OpenSearch Serverless, API Gateway, CDK), pandas, NumPy, Excel, Git, REST APIs, JSON, CI/CD (GitHub Actions)</p>
+          <p><span class="font-semibold text-foreground">Machine Learning & Statistics:</span> XGBoost, Random Forest, Prophet, ARIMA, GLM/Regression, scikit-learn, GridSearchCV, cross-validation, feature engineering, time series analysis, statistical testing, A/B testing, experimental design, LLM application development (RAG, GraphRAG, multi-agent simulation, grounding, prompt/agent design, tool use, evaluation)</p>
+          <p><span class="font-semibold text-foreground">Data & Cloud:</span> Snowflake, AWS (Lambda, S3, AppFlow, QuickSight, EventBridge, Bedrock, OpenSearch Serverless, API Gateway, CDK), pandas, NumPy, Excel, Git, REST APIs, JSON, CI/CD (GitHub Actions), Streamlit, pdfplumber, yfinance</p>
+          <p><span class="font-semibold text-foreground">AI & Agents:</span> Multi-agent simulation (OASIS, CAMEL-AI), GraphRAG (Zep), OpenAI-compatible LLM APIs (Qwen, Claude), MiroFish geopolitical simulation engine</p>
           <p><span class="font-semibold text-foreground">ETL & Data Engineering:</span> ETL/ELT pipelines, data quality monitoring, dimensional modeling, data warehousing</p>
           <p><span class="font-semibold text-foreground">Visualization & BI:</span> matplotlib, seaborn, Plotly, Plotly Dash, QuickSight, Power BI, Tableau, Streamlit, interactive dashboards</p>
         </div>
