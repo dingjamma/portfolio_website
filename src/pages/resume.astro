@@ -75,8 +75,11 @@ import Layout from '@/layouts/Layout.astro';
             <span class="text-muted-foreground text-xs">Calgary, AB</span>
           </div>
           <ul class="space-y-1.5 text-muted-foreground">
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built and deployed a Prophet forecasting model on 12 years of flight data (78K+ flights), achieving 6% weekly MAPE in live 2026 production and targeting $490K+ reduction in annual empty leg positioning costs</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Architected automated ingestion pipelines (FL3XX, Salesforce, Foreflight → Lambda → S3 → Snowflake) and QuickSight dashboards for executive stakeholders</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Conducted EDA on 12 years of flight operations data across 78K+ flights to identify key demand drivers, seasonality factors, and a COVID-era regime shift informing model design</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built and deployed a Prophet time-series forecasting model achieving 10% weekly / 7% monthly MAPE in backtesting and 6% weekly / 2% monthly MAPE in live 2026 production, targeting 1%+ reduction in $49M annual empty leg positioning costs</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built automated data ingestion pipelines (FL3XX, Salesforce, Foreflight → AWS Lambda → S3 → Snowflake) with end-to-end data quality monitoring and alerting</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Designed a data-driven RBAC workaround for FL3XX's booking platform by building a cleansing and segmentation pipeline with custom business logic mapping user roles (owner, individual, full access) and a manual override layer to manage edge cases</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built QuickSight dashboards enabling real-time monitoring of operational KPIs, flight demand trends, and fleet utilization for executive and operational stakeholders</span></li>
           </ul>
         </div>
       </section>
@@ -98,7 +101,8 @@ import Layout from '@/layouts/Layout.astro';
           </div>
           <ul class="space-y-1.5 text-muted-foreground">
             <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Fully automated pipeline scraping 21 years of housing, oil, and economic data; trained three XGBoost models (annual, monthly, daily) with a live Housing Pressure Score deployed on Streamlit</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built an intelligence layer — live news scraper, auto-generated market reports, and a MiroFish multi-agent simulation (8 AI actors: BoC, OPEC+, Iran/IRGC, Alberta energy, Calgary buyers) predicting December 2026 housing outcomes; automated biweekly via GitHub Actions</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built an intelligence layer — live news scraper (CBC, OilPrice, Better Dwelling) and auto-generated market reports, automated biweekly via GitHub Actions</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Integrated MiroFish multi-agent geopolitical simulation (8 AI actors: BoC, OPEC+, Iran/IRGC, Alberta energy, Calgary buyers) using OASIS, CAMEL-AI, and GraphRAG (Zep) to predict December 2026 housing outcomes</span></li>
           </ul>
         </div>
       </section>
@@ -136,12 +140,12 @@ import Layout from '@/layouts/Layout.astro';
       <section>
         <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-3">Technical Skills</h3>
         <div class="space-y-1.5 text-muted-foreground">
-          <p><span class="font-semibold text-foreground">Programming:</span> Python, SQL, R, JavaScript</p>
-          <p><span class="font-semibold text-foreground">Machine Learning & Statistics:</span> XGBoost, Random Forest, Prophet, ARIMA, GLM/Regression, scikit-learn, GridSearchCV, cross-validation, feature engineering, time series analysis, statistical testing, A/B testing, experimental design, LLM application development (RAG, GraphRAG, multi-agent simulation, grounding, prompt/agent design, tool use, evaluation)</p>
-          <p><span class="font-semibold text-foreground">Data & Cloud:</span> Snowflake, AWS (Lambda, S3, AppFlow, QuickSight, EventBridge, Bedrock, OpenSearch Serverless, API Gateway, CDK), pandas, NumPy, Excel, Git, REST APIs, JSON, CI/CD (GitHub Actions), Streamlit, pdfplumber, yfinance</p>
-          <p><span class="font-semibold text-foreground">AI & Agents:</span> Multi-agent simulation (OASIS, CAMEL-AI), GraphRAG (Zep), OpenAI-compatible LLM APIs (Qwen, Claude), MiroFish geopolitical simulation engine</p>
-          <p><span class="font-semibold text-foreground">ETL & Data Engineering:</span> ETL/ELT pipelines, data quality monitoring, dimensional modeling, data warehousing</p>
-          <p><span class="font-semibold text-foreground">Visualization & BI:</span> matplotlib, seaborn, Plotly, Plotly Dash, QuickSight, Power BI, Tableau, Streamlit, interactive dashboards</p>
+          <p><span class="font-semibold text-foreground">Languages:</span> Python, SQL, R, JavaScript</p>
+          <p><span class="font-semibold text-foreground">Machine Learning:</span> XGBoost, Random Forest, scikit-learn, time-series forecasting, classification, feature engineering</p>
+          <p><span class="font-semibold text-foreground">Deep Learning:</span> PyTorch, TensorFlow, Hugging Face, CNNs, LSTMs, Reinforcement Learning (PPO)</p>
+          <p><span class="font-semibold text-foreground">Statistics:</span> A/B testing, experimental design, hypothesis testing, regression</p>
+          <p><span class="font-semibold text-foreground">Platforms:</span> AWS (Lambda, S3, Bedrock, QuickSight, AppFlow, EventBridge, OpenSearch, API Gateway, CDK), Snowflake, Vercel, Streamlit, Git, GitHub Actions</p>
+          <p><span class="font-semibold text-foreground">AI/LLMs:</span> Multi-agent simulation (OASIS, CAMEL-AI), GraphRAG (Zep), LLM application development (RAG, prompt engineering, tool use, agent design), OpenAI-compatible APIs</p>
         </div>
       </section>
 
