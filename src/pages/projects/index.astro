@@ -6,9 +6,9 @@ const projects = [
   {
     title: 'Calgary Housing Price Predictor',
     description:
-      'Full automated pipeline — no manual downloads. Scrapes CREB monthly PDFs, City of Calgary assessed values (2005–2025), Bank of Canada rates, and daily WTI oil prices. Three XGBoost models at annual, monthly, and daily resolution. The daily Housing Pressure Score flipped negative on March 10 as oil crossed $83 — now reading -0.13% at $100/barrel. Integrates MiroFish geopolitical simulation: the same Kharg Island scenario that predicted the oil spike same-day feeds directly into the housing forecast.',
-    tags: ['Python', 'XGBoost', 'pdfplumber', 'yfinance', 'Bank of Canada API', 'MiroFish', 'Pandas', 'Wayback Machine'],
-    metrics: ['5,600+ days of daily data', '3 XGBoost models', 'Live pressure score', '2005–2026 coverage'],
+      'End-to-end automated intelligence pipeline — no manual downloads. Scrapes 21 years of housing, oil, and economic data; trains three XGBoost models (annual, monthly, daily); scrapes live news via RSS; auto-generates a market intelligence report; and feeds it directly into a MiroFish multi-agent geopolitical simulation. WTI surged $57→$100/barrel in 90 days after US strikes on Iran\'s Kharg Island. The daily Housing Pressure Score currently reads +1.66%. Eight AI agents (Bank of Canada, OPEC+, Iran/IRGC, Calgary buyers, Alberta energy sector) are now simulating December 2026 housing outcomes.',
+    tags: ['Python', 'XGBoost', 'pdfplumber', 'yfinance', 'Bank of Canada API', 'MiroFish', 'Zep GraphRAG', 'OASIS', 'qwen-plus', 'Streamlit', 'Wayback Machine'],
+    metrics: ['5,600+ days of daily data', '3 XGBoost models', 'Live pressure score', 'Full MiroFish pipeline'],
     href: 'https://github.com/dingjamma/Calgary-Housing',
     demoHref: 'https://calgary-housing-7phh7dhjyyd2r7mtjymuvm.streamlit.app',
     status: 'demo' as const,

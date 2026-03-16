@@ -152,8 +152,11 @@
             <span class="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
               Live Dashboard
             </span>
+            <span class="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300">
+              MiroFish Simulation Running
+            </span>
             <span class="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">
-              Forecasting · XGBoost · Live Data
+              Forecasting · XGBoost · Multi-Agent AI
             </span>
           </div>
 
@@ -161,17 +164,19 @@
           <div>
             <h2 class="text-xl font-bold text-foreground">Calgary Housing Price Predictor</h2>
             <p class="mt-2 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-              Full automated data pipeline — no manual downloads. Scrapes CREB monthly PDFs, City of Calgary assessed values (2005–2025),
-              Bank of Canada rates, and daily WTI oil prices to predict Calgary housing benchmark prices.
-              Three XGBoost models at annual, monthly, and <strong class="text-foreground">daily resolution</strong> — including a live Housing Pressure Score
-              that flipped negative on March 10 as oil crossed $83, now reading <strong class="text-foreground">-0.13% at $100/barrel</strong>.
-              Integrates MiroFish geopolitical simulation: the Kharg Island scenario that predicted the current oil spike same-day.
+              End-to-end automated intelligence pipeline. Scrapes 21 years of housing, oil, and economic data;
+              trains three XGBoost models (annual, monthly, daily); scrapes live news via RSS;
+              auto-generates a market intelligence report; then feeds it into a
+              <strong class="text-foreground">MiroFish multi-agent geopolitical simulation</strong>.
+              WTI surged $57→$100/barrel in 90 days after US strikes on Iran's Kharg Island.
+              Eight AI agents — Bank of Canada, OPEC+, Iran/IRGC, Calgary buyers, Alberta energy sector —
+              are now simulating <strong class="text-foreground">December 2026 housing outcomes</strong>.
             </p>
           </div>
 
           <!-- Metrics -->
           <div class="flex flex-wrap gap-2">
-            {['5,600+ days of daily data', '3 XGBoost models', 'Live pressure score', 'Oil at $100 today', '2005–2026 coverage'].map(m => (
+            {['5,600+ days of daily data', '3 XGBoost models', 'Live pressure score: +1.66%', '8 AI simulation agents', 'Full pipeline automated'].map(m => (
               <span class="inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold bg-primary/10 text-primary">{m}</span>
             ))}
           </div>
@@ -179,7 +184,7 @@
           <!-- Tags + actions -->
           <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div class="flex flex-wrap gap-2">
-              {['Python', 'XGBoost', 'pdfplumber', 'yfinance', 'Bank of Canada API', 'MiroFish', 'Pandas'].map(t => (
+              {['Python', 'XGBoost', 'MiroFish', 'Zep GraphRAG', 'OASIS', 'qwen-plus', 'Streamlit'].map(t => (
                 <span class="text-xs px-2 py-1 rounded bg-secondary text-secondary-foreground font-mono">{t}</span>
               ))}
             </div>
