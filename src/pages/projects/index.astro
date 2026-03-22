@@ -4,60 +4,22 @@ import ProjectCard from '@/components/ProjectCard.astro';
 
 const projects = [
   {
+    title: 'NBA Player Prop Predictor — Wembanyama',
+    description:
+      'Fully automated nightly pipeline predicting Victor Wembanyama\'s prop bets before every Spurs game. Crawls live injury reports, prop lines from 4 sportsbooks (DraftKings, FanDuel, BetMGM, Pinnacle), and the latest news — then runs XGBoost inference across 6 stat categories using 45 engineered features (rolling averages, opponent difficulty, home/away splits). The seed is fed into a MiroFish multi-agent simulation that produces a structured prediction report with OVER/UNDER recommendations. Runs at midnight via a local cron job — zero cloud required.',
+    tags: ['Python', 'XGBoost', 'MiroFish', 'Zep GraphRAG', 'qwen-plus', 'Streamlit', 'ESPN API', 'The Odds API'],
+    metrics: ['6 XGBoost models', '45 features', 'PTS · REB · AST · STL · BLK · FG3M', 'Fully automated nightly'],
+    href: 'https://github.com/dingjamma/NBA-Player-Prop',
+    status: 'demo' as const,
+  },
+  {
     title: 'Calgary Housing Price Predictor',
     description:
       'End-to-end automated intelligence pipeline — no manual downloads. Scrapes 21 years of housing, oil, and economic data; trains three XGBoost models (annual, monthly, daily); scrapes live news via RSS; auto-generates a market intelligence report; and feeds it directly into a MiroFish multi-agent geopolitical simulation. WTI surged $57→$100/barrel in 90 days after US strikes on Iran\'s Kharg Island. The daily Housing Pressure Score currently reads +1.66%. Eight AI agents (Bank of Canada, OPEC+, Iran/IRGC, Calgary buyers, Alberta energy sector) are now simulating December 2026 housing outcomes.',
-    tags: ['Python', 'XGBoost', 'pdfplumber', 'yfinance', 'Bank of Canada API', 'MiroFish', 'Zep GraphRAG', 'OASIS', 'qwen-plus', 'Streamlit', 'Wayback Machine'],
-    metrics: ['5,600+ days of daily data', '3 XGBoost models', 'Live pressure score', 'Full MiroFish pipeline'],
+    tags: ['Python', 'XGBoost', 'pdfplumber', 'yfinance', 'Bank of Canada API', 'MiroFish', 'Zep GraphRAG', 'qwen-plus', 'Streamlit'],
+    metrics: ['5,600+ days of daily data', '3 XGBoost models', 'Live pressure score: +1.66%', 'Full MiroFish pipeline'],
     href: 'https://github.com/dingjamma/Calgary-Housing',
     demoHref: 'https://calgary-housing-7phh7dhjyyd2r7mtjymuvm.streamlit.app',
-    status: 'demo' as const,
-  },
-  {
-    title: 'MiroFish — Geopolitical Simulation Engine',
-    description:
-      'Forked and extended an open-source multi-agent simulation engine (AGPL-3.0). Fed a single CBC News article about the US strike on Iran\'s Kharg Island into MiroFish and ran a 72-round, 8-agent simulation. The engine built a knowledge graph via GraphRAG, assigned independent AI agents to actors (Trump, IRGC, UAE, global oil markets), and simulated 72 hours of emergent geopolitical behavior across two social media platforms. Key predictions — Iran would selectively block the Strait to US/Israel only, India and Turkey would trade independently, and Trump would build a naval coalition — were validated within hours by real-world events on the same day.',
-    tags: ['Python', 'Multi-Agent AI', 'GraphRAG', 'Zep', 'Flask', 'React', 'Claude Haiku', 'OASIS', 'CAMEL-AI'],
-    metrics: ['5/5 predictions validated same day', '72-agent simulation rounds', 'Single article input'],
-    href: 'https://github.com/dingjamma/MiroFish',
-    status: 'demo' as const,
-    forked: true,
-  },
-  {
-    title: 'AI Judge — SCOTUS Verdict Backtester',
-    description:
-      'Can AI predict Supreme Court rulings? Retrieves 200 landmark SCOTUS decisions from CourtListener and runs a RAG pipeline with temporal leakage prevention — Claude 3.5 Haiku on AWS Bedrock, FAISS vector search, MLflow experiment tracking, and a Streamlit dashboard. 45.7% backtested accuracy.',
-    tags: ['Python', 'AWS Bedrock', 'Claude Haiku', 'FAISS', 'MLflow', 'Streamlit', 'SQLite'],
-    metrics: ['45.7% backtested accuracy', 'Temporal leakage prevention', '200 SCOTUS cases'],
-    href: 'https://github.com/dingjamma/ai_judge',
-    status: 'demo' as const,
-  },
-  {
-    title: 'Fate/RAG — RAG Chatbot (Archived)',
-    description:
-      'Production-grade RAG chatbot for the Fate Series universe on AWS. Full serverless stack: FastAPI on Lambda via Mangum, API Gateway, OpenSearch Serverless k-NN vector search, and AWS Bedrock (Claude Sonnet + Titan Embeddings). GitHub Actions CI/CD pipeline runs pytest on every PR and auto-deploys to AWS via CDK on merge to main. Docker Compose for local dev.',
-    tags: ['Python', 'AWS Bedrock', 'Claude Sonnet', 'OpenSearch', 'FastAPI', 'AWS Lambda', 'API Gateway', 'AWS CDK', 'GitHub Actions', 'Docker', 'pytest', 'Mangum', 'Pydantic'],
-    metrics: ['Serverless infra', 'k-NN vector search (HNSW)', 'CI/CD auto-deploy', 'SSE streaming'],
-    href: 'https://github.com/dingjamma/fate_rag',
-    status: 'archived' as const,
-  },
-  {
-    title: 'Pokémon Red — RL Agent',
-    description:
-      'Operationalized an open-source PPO agent (Peter Whidden) to play Pokémon Red as a hands-on RL learning project. Diagnosed and fixed a critical disk usage bug — the training loop was saving a screenshot on every negative reward step, generating hundreds of GBs in minutes. Redirected checkpoint storage to a secondary drive, configured the environment for local and cloud (AWS EC2) execution, and set up W&B for live experiment tracking.',
-    tags: ['Python', 'PyTorch', 'PPO', 'Stable Baselines 3', 'Gymnasium', 'PyBoy', 'AWS EC2', 'W&B', 'TensorBoard'],
-    metrics: ['Fixed runaway disk I/O bug', 'AWS EC2 cloud deployment', 'W&B experiment tracking'],
-    href: 'https://github.com/dingjamma/PokemonRedExperiments',
-    status: 'demo' as const,
-    forked: true,
-  },
-  {
-    title: 'Super Bowl LX Prediction',
-    description:
-      'XGBoost binary classifier trained on 25 years of NFL data to predict Super Bowl outcomes. Key finding: regular season wins contribute 0% feature importance — defense (37%) and offense (35%) dominate. Honest evaluation with GridSearchCV and 5-fold CV.',
-    tags: ['Python', 'XGBoost', 'scikit-learn', 'Pandas', 'Jupyter', 'AWS S3'],
-    metrics: ['67.5% CV accuracy', 'Defense #1 feature'],
-    href: 'https://github.com/dingjamma/SuperbowlLXPrediction',
     status: 'demo' as const,
   },
 ];
