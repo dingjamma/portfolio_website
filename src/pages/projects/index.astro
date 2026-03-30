@@ -4,22 +4,39 @@ import ProjectCard from '@/components/ProjectCard.astro';
 
 const projects = [
   {
+    title: 'NBA-Simulverse',
+    description:
+      'NBA season simulation engine where every player is an autonomous LLM agent with memory, personality, and team chemistry. Each agent reacts to news, develops relationships, and makes decisions that affect game outcomes. Runs hundreds of simulations to capture human behavioral factors that traditional stat models miss.',
+    tags: ['Python', 'LLM Agents', 'Multi-Agent Systems', 'Simulation', 'NBA'],
+    metrics: ['Autonomous LLM agents', 'Memory + personality', 'Team chemistry model', 'Hundreds of sims'],
+    href: 'https://github.com/dingjamma/NBA-Simulverse',
+    status: 'demo' as const,
+  },
+  {
     title: 'NBA Player Prop Predictor — Wembanyama',
     description:
-      'Fully automated nightly pipeline predicting Victor Wembanyama\'s prop bets before every Spurs game. Crawls live injury reports, prop lines from 4 sportsbooks (DraftKings, FanDuel, BetMGM, Pinnacle), and the latest news — then runs XGBoost inference across 6 stat categories using 45 engineered features (rolling averages, opponent difficulty, home/away splits). The seed is fed into a MiroFish multi-agent simulation that produces a structured prediction report with OVER/UNDER recommendations. Runs at midnight via a local cron job — zero cloud required.',
+      'Fully automated nightly pipeline predicting Victor Wembanyama\'s prop bets before every Spurs game. Crawls live injury reports, prop lines from 4 sportsbooks (DraftKings, FanDuel, BetMGM, Pinnacle), and the latest news — then runs XGBoost inference across 6 stat categories using 45 engineered features. The seed is fed into a MiroFish multi-agent simulation that produces a structured prediction report with OVER/UNDER recommendations. Runs at midnight via a local cron job.',
     tags: ['Python', 'XGBoost', 'MiroFish', 'Zep GraphRAG', 'qwen-plus', 'Streamlit', 'ESPN API', 'The Odds API'],
     metrics: ['6 XGBoost models', '45 features', 'PTS · REB · AST · STL · BLK · FG3M', 'Fully automated nightly'],
     href: 'https://github.com/dingjamma/NBA-Player-Prop',
     status: 'demo' as const,
   },
   {
-    title: 'Calgary Housing Price Predictor',
+    title: 'Calgary Housing Intelligence',
     description:
-      'End-to-end automated intelligence pipeline — no manual downloads. Scrapes 21 years of housing, oil, and economic data; trains three XGBoost models (annual, monthly, daily); scrapes live news via RSS; auto-generates a market intelligence report; and feeds it directly into a MiroFish multi-agent geopolitical simulation. WTI surged $57→$100/barrel in 90 days after US strikes on Iran\'s Kharg Island. The daily Housing Pressure Score currently reads +1.66%. Eight AI agents (Bank of Canada, OPEC+, Iran/IRGC, Calgary buyers, Alberta energy sector) are now simulating December 2026 housing outcomes.',
+      'Full automated intelligence pipeline that scrapes 21 years of housing, oil, and economic data; trains three XGBoost models (annual, monthly, daily); scrapes live news via RSS; auto-generates a market intelligence report; and feeds it into a MiroFish multi-agent geopolitical simulation. Eight AI agents (Bank of Canada, OPEC+, Iran/IRGC, Calgary buyers, Alberta energy sector) simulate housing outcomes. Runs biweekly on the 1st and 15th.',
     tags: ['Python', 'XGBoost', 'pdfplumber', 'yfinance', 'Bank of Canada API', 'MiroFish', 'Zep GraphRAG', 'qwen-plus', 'Streamlit'],
-    metrics: ['5,600+ days of daily data', '3 XGBoost models', 'Live pressure score: +1.66%', 'Full MiroFish pipeline'],
+    metrics: ['5,600+ days of daily data', '3 XGBoost models', 'Live pressure score', '8-agent geopolitical sim'],
     href: 'https://github.com/dingjamma/Calgary-Housing',
-    demoHref: 'https://calgary-housing-7phh7dhjyyd2r7mtjymuvm.streamlit.app',
+    status: 'demo' as const,
+  },
+  {
+    title: 'AI Judge — Supreme Court Prediction',
+    description:
+      'Supreme Court verdict prediction system using RAG with Claude and FAISS vector search on 200 landmark SCOTUS cases. Retrieves relevant precedents, analyzes case facts, and predicts outcomes while enforcing temporal integrity — the model only sees cases decided before the target case.',
+    tags: ['Python', 'Claude API', 'FAISS', 'RAG', 'LangChain', 'Legal AI'],
+    metrics: ['200 landmark cases', 'RAG + vector search', 'Temporal integrity', '45.7% accuracy'],
+    href: 'https://github.com/dingjamma/ai_judge',
     status: 'demo' as const,
   },
 ];

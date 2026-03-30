@@ -9,13 +9,21 @@ const skills = [
 
   // Data & ML
   { name: 'Time-Series Forecasting', category: 'ML/Analytics' },
-  { name: 'RAG Pipelines',    category: 'ML/Analytics' },
-  { name: 'PyTorch',          category: 'ML/Analytics' },
-  { name: 'Prophet / ARIMA',  category: 'ML/Analytics' },
-  { name: 'LSTM / Transformers', category: 'ML/Analytics' },
   { name: 'XGBoost / scikit-learn', category: 'ML/Analytics' },
+  { name: 'Prophet / ARIMA',  category: 'ML/Analytics' },
+  { name: 'PyTorch',          category: 'ML/Analytics' },
   { name: 'EDA & Feature Engineering', category: 'ML/Analytics' },
-  { name: 'Vector Search (k-NN / HNSW)', category: 'ML/Analytics' },
+
+  // AI & LLMs
+  { name: 'RAG Pipelines',    category: 'AI/LLMs' },
+  { name: 'LLM Agents',       category: 'AI/LLMs' },
+  { name: 'Multi-Agent Systems', category: 'AI/LLMs' },
+  { name: 'LangChain',        category: 'AI/LLMs' },
+  { name: 'LlamaIndex',       category: 'AI/LLMs' },
+  { name: 'FAISS',            category: 'AI/LLMs' },
+  { name: 'Ollama',           category: 'AI/LLMs' },
+  { name: 'CrewAI',           category: 'AI/LLMs' },
+  { name: 'MCP (Model Context Protocol)', category: 'AI/LLMs' },
 
   // Cloud & Infra
   { name: 'AWS Bedrock',      category: 'Cloud & Infra' },
@@ -49,6 +57,7 @@ const skills = [
 const categoryColors: Record<string, string> = {
   'Core':           'bg-indigo-100 text-indigo-700 border-indigo-200 dark:bg-indigo-900/40 dark:text-indigo-300 dark:border-indigo-800',
   'ML/Analytics':   'bg-violet-100 text-violet-700 border-violet-200 dark:bg-violet-900/40 dark:text-violet-300 dark:border-violet-800',
+  'AI/LLMs':        'bg-fuchsia-100 text-fuchsia-700 border-fuchsia-200 dark:bg-fuchsia-900/40 dark:text-fuchsia-300 dark:border-fuchsia-800',
   'Cloud & Infra':  'bg-sky-100   text-sky-700   border-sky-200   dark:bg-sky-900/40   dark:text-sky-300   dark:border-sky-800',
   'DevOps':         'bg-rose-100  text-rose-700  border-rose-200  dark:bg-rose-900/40  dark:text-rose-300  dark:border-rose-800',
   'Web':            'bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-900/40 dark:text-emerald-300 dark:border-emerald-800',
@@ -100,23 +109,25 @@ const experience = [
       <!-- Professional summary -->
       <div class="prose prose-slate dark:prose-invert max-w-none space-y-4 text-muted-foreground leading-relaxed">
         <p>
-          I'm a data scientist who builds models, optimizes pipelines, and finds insights in messy data.
+          I'm a data scientist and aspiring AI engineer who builds end-to-end ML systems and AI-powered pipelines.
           Currently working as an Associate Data Analyst at <strong class="text-foreground">AirSprint Private Aviation</strong>,
-          where I specialize in <strong class="text-foreground">SQL optimization, data modeling in Snowflake,</strong> and analytics engineering.
+          where I specialize in <strong class="text-foreground">time-series forecasting, SQL optimization, and data modeling in Snowflake.</strong>
           I hold an <strong class="text-foreground">MDSA (Master of Data Science and Analytics)</strong> from the University of Calgary.
         </p>
         <p>
-          I'm drawn to complex problems — whether that's predicting Super Bowl outcomes with XGBoost,
-          resolving metric inflation in flight data views, or experimenting with reinforcement learning for game AI.
-          I enjoy the full lifecycle: from messy exploratory analysis to production-ready solutions.
+          I'm drawn to complex systems — whether that's building multi-agent LLM simulations for NBA predictions,
+          training XGBoost models that track how oil prices drive Calgary housing, or building RAG systems
+          that predict Supreme Court verdicts. I enjoy the full lifecycle: from messy exploratory analysis
+          to production-ready AI systems.
         </p>
         <p>
           Recent work:
         </p>
         <ul>
-          <li>Built an XGBoost binary classifier analyzing 25 years of Super Bowl data to identify predictive patterns in team performance</li>
-          <li>Optimized Snowflake data models and resolved duplicate record issues causing metric inflation in AWS QuickSight dashboards</li>
-          <li>Continuing reinforcement learning experiments with Deep Q-Networks</li>
+          <li>Built NBA-Simulverse — an NBA season sim where every player is an autonomous LLM agent with memory and personality</li>
+          <li>Overhauled Calgary Housing Intelligence — 3 XGBoost models, live pressure score, 8-agent geopolitical simulation</li>
+          <li>Built AI Judge — Supreme Court verdict prediction using RAG with Claude and FAISS on 200 landmark cases</li>
+          <li>Working through 93 AI engineering projects covering LLMs, RAG, agents, MCP, and fine-tuning</li>
         </ul>
       </div>
     </div>
