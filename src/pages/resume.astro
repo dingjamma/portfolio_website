@@ -50,10 +50,10 @@ import Layout from '@/layouts/Layout.astro';
           &nbsp;|&nbsp;
           <a href="https://dingjames.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-primary transition-colors">Portfolio</a>
         </p>
-        <p class="mt-1 text-muted-foreground text-xs">Calgary, AB · TN Visa Eligible · Relocating to the U.S.</p>
+        <p class="mt-1 text-muted-foreground text-xs">Calgary, AB</p>
       </div>
 
-<!-- Work Experience -->
+      <!-- Work Experience -->
       <section class="mb-6">
         <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-4">Work Experience</h3>
 
@@ -67,50 +67,12 @@ import Layout from '@/layouts/Layout.astro';
             <span class="text-muted-foreground text-xs">Calgary, AB</span>
           </div>
           <ul class="space-y-1.5 text-muted-foreground">
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Conducted EDA on 12 years of flight operations data across 78K+ flights to identify key demand drivers, seasonality factors, and a COVID-era regime shift informing model design</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built and deployed a Prophet time-series forecasting model achieving 10% weekly / 7% monthly MAPE in backtesting and 6% weekly / 2% monthly MAPE in live 2026 production, targeting 1%+ reduction in $49M annual empty leg positioning costs</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Conducted EDA on 12 years of flight operations data (78K+ flights), identified demand drivers and a COVID-era regime shift, then built and deployed a Prophet forecasting model achieving 2% monthly MAPE in production — targeting 1%+ reduction in $49M annual positioning costs</span></li>
             <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built automated data ingestion pipelines (FL3XX, Salesforce, Foreflight → AWS Lambda → S3 → Snowflake) with end-to-end data quality monitoring and alerting</span></li>
             <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Designed a data-driven RBAC workaround for FL3XX's booking platform by building a cleansing and segmentation pipeline with custom business logic mapping user roles (owner, individual, full access) and a manual override layer to manage edge cases</span></li>
             <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built QuickSight dashboards enabling real-time monitoring of operational KPIs, flight demand trends, and fleet utilization for executive and operational stakeholders</span></li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Projects -->
-      <section class="mb-6">
-        <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-4">Projects</h3>
-
-        <!-- NBA Player Prop -->
-        <div class="mb-4">
-          <div class="flex justify-between items-baseline">
-            <span class="font-bold text-foreground">NBA Player Prop Predictor — Wembanyama</span>
-            <span class="text-muted-foreground text-xs whitespace-nowrap">Mar 2026</span>
-          </div>
-          <div class="mb-2">
-            <a href="https://github.com/dingjamma/NBA-Player-Prop" target="_blank" rel="noopener noreferrer" class="text-primary text-xs hover:underline">github.com/dingjamma/NBA-Player-Prop</a>
-          </div>
-          <ul class="space-y-1.5 text-muted-foreground">
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built a fully automated nightly pipeline that crawls live injury reports, prop lines from 4 sportsbooks, and recent news before every Spurs game, then runs XGBoost inference across 6 stat categories (PTS, REB, AST, STL, BLK, FG3M)</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Engineered 45 features per prediction — rolling averages (3/5/10 game windows), opponent defensive ratings, home/away splits, and season momentum signals; trained on ESPN game logs across two seasons</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Integrated MiroFish multi-agent simulation to generate structured OVER/UNDER prediction reports; built a Streamlit dashboard displaying predictions vs. Vegas lines with historical matchup context</span></li>
-          </ul>
-        </div>
-
-        <!-- Calgary Housing -->
-        <div class="mb-4">
-          <div class="flex justify-between items-baseline">
-            <span class="font-bold text-foreground">Calgary Housing Price Predictor</span>
-            <span class="text-muted-foreground text-xs whitespace-nowrap">Mar 2026</span>
-          </div>
-          <div class="mb-2 flex gap-3">
-            <a href="https://github.com/dingjamma/Calgary-Housing" target="_blank" rel="noopener noreferrer" class="text-primary text-xs hover:underline">github.com/dingjamma/Calgary-Housing</a>
-            <span class="text-muted-foreground text-xs">·</span>
-            <a href="https://calgary-housing-7phh7dhjyyd2r7mtjymuvm.streamlit.app" target="_blank" rel="noopener noreferrer" class="text-primary text-xs hover:underline">Live Dashboard</a>
-          </div>
-          <ul class="space-y-1.5 text-muted-foreground">
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Fully automated pipeline scraping 21 years of housing, oil, and economic data; trained three XGBoost models (annual, monthly, daily) with a live Housing Pressure Score deployed on Streamlit</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Built an intelligence layer — live news scraper (CBC, OilPrice, Better Dwelling) and auto-generated market reports, automated biweekly via local cron</span></li>
-            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Integrated MiroFish multi-agent geopolitical simulation (8 AI actors: BoC, OPEC+, Iran/IRGC, Alberta energy, Calgary buyers) using OASIS, CAMEL-AI, and GraphRAG (Zep) to predict December 2026 housing outcomes</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Designed and built Jetty, a multi-agent RAG AI assistant for 400+ employees using AWS Lambda, Bedrock, and DynamoDB — enabling natural-language Q&A over internal documentation, policies, and operational data with tool-use and agent orchestration</span></li>
+            <li class="flex gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60"></span><span>Architected an end-to-end vendor contract management pipeline for Legal — automated document intake, processing, and structured storage via custom Salesforce objects, data quality validation, and governed data models replacing fully manual workflows</span></li>
           </ul>
         </div>
       </section>
@@ -134,7 +96,7 @@ import Layout from '@/layouts/Layout.astro';
           <div class="flex justify-between items-baseline">
             <div>
               <span class="font-bold text-foreground">Bachelor of Science, Agriculture Commerce</span>
-              <p class="text-muted-foreground text-xs">University of Illinois at Urbana-Champaign</p>
+              <p class="text-muted-foreground text-xs">University of Illinois at Urbana Champaign</p>
             </div>
             <div class="text-right">
               <span class="text-muted-foreground text-xs whitespace-nowrap">May 2016</span>
@@ -148,10 +110,12 @@ import Layout from '@/layouts/Layout.astro';
       <section>
         <h3 class="text-xs font-bold uppercase tracking-widest text-foreground border-b border-border pb-1 mb-3">Technical Skills</h3>
         <div class="space-y-1.5 text-muted-foreground">
-          <p><span class="font-semibold text-foreground">Languages:</span> Python, SQL, R</p>
-          <p><span class="font-semibold text-foreground">ML & Data:</span> XGBoost, scikit-learn, Prophet, pandas, NumPy, feature engineering, time-series forecasting</p>
-          <p><span class="font-semibold text-foreground">AI & Simulation:</span> MiroFish, Zep GraphRAG, OASIS, CAMEL-AI, OpenAI-compatible APIs (qwen-plus)</p>
-          <p><span class="font-semibold text-foreground">Tools & Platforms:</span> Streamlit, Snowflake, Git, Jupyter, yfinance, pdfplumber</p>
+          <p><span class="font-semibold text-foreground">Languages:</span> Python, SQL, JavaScript, Go, R</p>
+          <p><span class="font-semibold text-foreground">Machine Learning:</span> XGBoost, Random Forest, scikit-learn, time-series forecasting, classification, feature engineering</p>
+          <p><span class="font-semibold text-foreground">Deep Learning:</span> PyTorch, TensorFlow, Hugging Face, CNNs, LSTMs, Reinforcement Learning (PPO)</p>
+          <p><span class="font-semibold text-foreground">Data Engineering:</span> Data modeling, dimensional modeling, ETL/ELT pipelines, data quality validation, data governance, Snowflake, DuckDB</p>
+          <p><span class="font-semibold text-foreground">Platforms:</span> AWS (Lambda, S3, Bedrock, SageMaker, QuickSight, DynamoDB, API Gateway, CDK), Snowflake, Salesforce, Power BI, Git, GitHub Actions, Docker</p>
+          <p><span class="font-semibold text-foreground">AI/LLMs:</span> AI agent development (RAG, multi-agent orchestration, tool use), LLM application design (prompt engineering, agent pipelines), AWS Bedrock, OpenAI-compatible APIs</p>
         </div>
       </section>
 
