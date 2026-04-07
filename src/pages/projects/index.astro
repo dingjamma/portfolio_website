@@ -4,6 +4,24 @@ import ProjectCard from '@/components/ProjectCard.astro';
 
 const projects = [
   {
+    title: 'PolyEdge — Conflict Prediction for Polymarket',
+    description:
+      'Multi-signal conflict prediction system for Polymarket. Ingests 10 quantitative signal sources (oil prices, GDELT, ACLED, Reddit sentiment, VIX, military aircraft tracking, whale bets) then runs a 20-agent AI simulation modeled after real actors — Pentagon advisors, IRGC commanders, oil traders, CIA analysts — to produce calibrated probability estimates that beat the market.',
+    tags: ['Python', 'Multi-Agent AI', 'Streamlit', 'GDELT', 'ACLED', 'OpenSky', 'Polymarket API'],
+    metrics: ['20 AI agents', '10 signal sources', 'Ensemble models', 'Calibrated predictions'],
+    href: 'https://github.com/dingjamma/PolyEdge',
+    status: 'demo' as const,
+  },
+  {
+    title: 'NBA MVP 2026 Prediction',
+    description:
+      'Deep research + multi-agent voter simulation predicting the 2025-26 NBA MVP. Scraped 6 years of official voter ballot PDFs to identify 47 iron-core voters, researched each voter\'s public stance, then ran a multi-agent simulation of voting behavior. Model says SGA at 80-85%, but found Wemby underpriced at 9:1 with 15-18% true probability.',
+    tags: ['Python', 'Claude', 'Multi-Agent Simulation', 'Deep Research', 'PDF Scraping'],
+    metrics: ['47 iron-core voters profiled', '6 years of ballot data', '181 unique voters tracked', 'Multi-agent voter sim'],
+    href: 'https://github.com/dingjamma/nba-mvp-2026-prediction',
+    status: 'demo' as const,
+  },
+  {
     title: 'NBA-Simulverse',
     description:
       'NBA season simulation engine where every player is an autonomous LLM agent with memory, personality, and team chemistry. Each agent reacts to news, develops relationships, and makes decisions that affect game outcomes. Runs hundreds of simulations to capture human behavioral factors that traditional stat models miss.',
@@ -30,15 +48,6 @@ const projects = [
     href: 'https://github.com/dingjamma/Calgary-Housing',
     status: 'demo' as const,
   },
-  {
-    title: 'AI Judge — Supreme Court Prediction',
-    description:
-      'Supreme Court verdict prediction system using RAG with Claude and FAISS vector search on 200 landmark SCOTUS cases. Retrieves relevant precedents, analyzes case facts, and predicts outcomes while enforcing temporal integrity — the model only sees cases decided before the target case.',
-    tags: ['Python', 'Claude API', 'FAISS', 'RAG', 'LangChain', 'Legal AI'],
-    metrics: ['200 landmark cases', 'RAG + vector search', 'Temporal integrity', '45.7% accuracy'],
-    href: 'https://github.com/dingjamma/ai_judge',
-    status: 'demo' as const,
-  },
 ];
 ---
 
@@ -56,8 +65,7 @@ const projects = [
         Projects
       </h1>
       <p class="text-muted-foreground text-lg leading-relaxed">
-        A selection of production systems and open-source projects focused on
-        applied machine learning and data analytics.
+        AI agent systems, multi-agent simulations, and production ML pipelines.
       </p>
     </div>
 
