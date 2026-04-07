@@ -15,8 +15,8 @@ const projects = [
   {
     title: 'NBA Player Prop Predictor — Wembanyama',
     description:
-      'Fully automated nightly pipeline predicting Victor Wembanyama\'s prop bets before every Spurs game. Crawls live injury reports, prop lines from 4 sportsbooks (DraftKings, FanDuel, BetMGM, Pinnacle), and the latest news — then runs XGBoost inference across 6 stat categories using 45 engineered features. The seed is fed into a MiroFish multi-agent simulation that produces a structured prediction report with OVER/UNDER recommendations. Runs at midnight via a local cron job.',
-    tags: ['Python', 'XGBoost', 'MiroFish', 'Zep GraphRAG', 'qwen-plus', 'Streamlit', 'ESPN API', 'The Odds API'],
+      'Fully automated nightly pipeline predicting Victor Wembanyama\'s prop bets before every Spurs game. Crawls live injury reports, prop lines from 4 sportsbooks (DraftKings, FanDuel, BetMGM, Pinnacle), and the latest news — then runs XGBoost inference across 6 stat categories using 45 engineered features. Produces structured OVER/UNDER prediction reports with confidence levels. Runs at midnight via a local cron job.',
+    tags: ['Python', 'XGBoost', 'Streamlit', 'ESPN API', 'The Odds API'],
     metrics: ['6 XGBoost models', '45 features', 'PTS · REB · AST · STL · BLK · FG3M', 'Fully automated nightly'],
     href: 'https://github.com/dingjamma/NBA-Player-Prop',
     status: 'demo' as const,
@@ -24,9 +24,9 @@ const projects = [
   {
     title: 'Calgary Housing Intelligence',
     description:
-      'Full automated intelligence pipeline that scrapes 21 years of housing, oil, and economic data; trains three XGBoost models (annual, monthly, daily); scrapes live news via RSS; auto-generates a market intelligence report; and feeds it into a MiroFish multi-agent geopolitical simulation. Eight AI agents (Bank of Canada, OPEC+, Iran/IRGC, Calgary buyers, Alberta energy sector) simulate housing outcomes. Runs biweekly on the 1st and 15th.',
-    tags: ['Python', 'XGBoost', 'pdfplumber', 'yfinance', 'Bank of Canada API', 'MiroFish', 'Zep GraphRAG', 'qwen-plus', 'Streamlit'],
-    metrics: ['5,600+ days of daily data', '3 XGBoost models', 'Live pressure score', '8-agent geopolitical sim'],
+      'Fully automated intelligence pipeline that scrapes 21 years of housing, oil, and economic data; trains three XGBoost models (annual, monthly, daily); scrapes live news via RSS; and auto-generates a market intelligence report with a live Housing Pressure Score. Runs biweekly on the 1st and 15th.',
+    tags: ['Python', 'XGBoost', 'pdfplumber', 'yfinance', 'Bank of Canada API', 'Streamlit'],
+    metrics: ['5,600+ days of daily data', '3 XGBoost models', 'Live pressure score', 'Automated biweekly'],
     href: 'https://github.com/dingjamma/Calgary-Housing',
     status: 'demo' as const,
   },
@@ -44,7 +44,7 @@ const projects = [
 
 <Layout
   title="Projects – James Ding"
-  description="Data science and ML projects by James Ding — production RAG on AWS, reinforcement learning, and sports analytics."
+  description="AI engineering and ML projects by James Ding — production AI agents, RAG systems, and applied machine learning."
 >
 
   <div class="section container-lg">
