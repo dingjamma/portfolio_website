@@ -4,39 +4,22 @@ import ProjectCard from '@/components/ProjectCard.astro';
 
 const projects = [
   {
-    title: 'PolyEdge — Conflict Prediction for Polymarket',
+    title: 'Polybot — Autonomous Polymarket Trading Bot',
     description:
-      'Multi-signal conflict prediction system for Polymarket. Ingests 10 quantitative signal sources (oil prices, GDELT, ACLED, Reddit sentiment, VIX, military aircraft tracking, whale bets) then runs a 20-agent AI simulation modeled after real actors — Pentagon advisors, IRGC commanders, oil traders, CIA analysts — to produce calibrated probability estimates that beat the market.',
-    tags: ['Python', 'Multi-Agent AI', 'Streamlit', 'GDELT', 'ACLED', 'OpenSky', 'Polymarket API'],
-    metrics: ['20 AI agents', '10 signal sources', 'Ensemble models', 'Calibrated predictions'],
-    href: 'https://github.com/dingjamma/PolyEdge',
-    status: 'demo' as const,
+      'AWS Lambda bot that reads live Polymarket tech markets every 15 minutes, forms independent probability estimates with a Haiku → Sonnet Claude cascade, and places small bets when it sees edge — with a homegrown insider-trading detector as a defensive filter. Risk guardrails cap exposure ($10/trade, $100/day), a bug-detection circuit breaker halts on slippage spikes or API errors, and every decision is audit-logged to DynamoDB and S3. Runs for under $1/day on AWS.',
+    tags: ['Python', 'AWS Lambda', 'Claude Haiku + Sonnet', 'AWS Bedrock', 'DynamoDB', 'S3', 'AWS CDK', 'py-clob-client'],
+    metrics: ['Runs every 15 min', '2-tier Claude cascade', 'Insider-trade detector', '<$1/day on AWS'],
+    href: 'https://github.com/dingjamma/polybot',
+    status: 'production' as const,
   },
   {
-    title: 'NBA MVP 2026 Prediction',
+    title: 'AI Judge — SCOTUS Verdict Backtester',
     description:
-      'Deep research + multi-agent voter simulation predicting the 2025-26 NBA MVP. Scraped 6 years of official voter ballot PDFs to identify 47 iron-core voters, researched each voter\'s public stance, then ran a multi-agent simulation of voting behavior. Model says SGA at 80-85%, but found Wemby underpriced at 9:1 with 15-18% true probability.',
-    tags: ['Python', 'Claude', 'Multi-Agent Simulation', 'Deep Research', 'PDF Scraping'],
-    metrics: ['47 iron-core voters profiled', '6 years of ballot data', '181 unique voters tracked', 'Multi-agent voter sim'],
-    href: 'https://github.com/dingjamma/nba-mvp-2026-prediction',
-    status: 'demo' as const,
-  },
-  {
-    title: 'NBA-Simulverse',
-    description:
-      'NBA season simulation engine where every player is an autonomous LLM agent with memory, personality, and team chemistry. Each agent reacts to news, develops relationships, and makes decisions that affect game outcomes. Runs hundreds of simulations to capture human behavioral factors that traditional stat models miss.',
-    tags: ['Python', 'LLM Agents', 'Multi-Agent Systems', 'Simulation', 'NBA'],
-    metrics: ['Autonomous LLM agents', 'Memory + personality', 'Team chemistry model', 'Hundreds of sims'],
-    href: 'https://github.com/dingjamma/NBA-Simulverse',
-    status: 'demo' as const,
-  },
-  {
-    title: 'NBA Player Prop Predictor — Wembanyama',
-    description:
-      'Fully automated nightly pipeline predicting Victor Wembanyama\'s prop bets before every Spurs game. Crawls live injury reports, prop lines from 4 sportsbooks (DraftKings, FanDuel, BetMGM, Pinnacle), and the latest news — then runs XGBoost inference across 6 stat categories using 45 engineered features. Produces structured OVER/UNDER prediction reports with confidence levels. Runs at midnight via a local cron job.',
-    tags: ['Python', 'XGBoost', 'Streamlit', 'ESPN API', 'The Odds API'],
-    metrics: ['6 XGBoost models', '45 features', 'PTS · REB · AST · STL · BLK · FG3M', 'Fully automated nightly'],
-    href: 'https://github.com/dingjamma/NBA-Player-Prop',
+      'A RAG pipeline that predicts Supreme Court rulings. Ingests 200 landmark SCOTUS decisions from CourtListener, embeds them with Amazon Titan into a FAISS index, then uses Claude on AWS Bedrock to render verdicts with top-3 precedent retrieval. Backtests accuracy against real historical outcomes with temporal integrity enforced — the model never sees future rulings. Final accuracy: 45.7% across 46 cases with ground-truth verdicts; fixing temporal leakage dropped it from 47.8% (that 2.1% gap was the model "cheating" by seeing the future).',
+    tags: ['Python', 'Claude (Bedrock)', 'Amazon Titan Embeddings', 'FAISS', 'Streamlit', 'MLflow', 'SQLite'],
+    metrics: ['46 cases judged', '45.7% accuracy', '200 landmark cases', 'Temporal leakage fixed'],
+    href: 'https://github.com/dingjamma/ai_judge',
+    demoHref: 'https://aijudge-mfdpnwy66vpjbv9qrdxmxn.streamlit.app',
     status: 'demo' as const,
   },
   {
